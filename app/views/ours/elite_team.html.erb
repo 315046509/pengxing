@@ -1,0 +1,41 @@
+<%= render "common/navigation" %>
+<div id="layout_main" class="clearfix">
+  <%= render "common/menuour" %>
+  <!-- 精英团队 -->
+  <div id="layout_mainer">
+    <div id="layout_content514">
+      <p><img src="../images/our/our_title.jpg" alt="关于我们"/></p>
+
+      <p class="yahei font_20 red">专业 + 经验 + 创意</p>
+
+      <p class="display8px"></p>
+
+      <p class="yahei font_20">专业的互动技术、丰富的成功经验、卓越的创意思维，为您创造出一流的品牌互联网形象！</p>
+
+      <p class="display16px"></p>
+
+      <p>矩阵互动的所有成员均毕业于国内正规大专院校，多年的工作实战历练，与国内各大企业的成功合作经验，让他们成长为业界精英——集策划思维、设计执行、服务意识于一体。他们凭借一分年轻、二分灵气、三分勇气、四分钻研、五分活力、六分博学、七分努力、八分专业、九分效率，为企业提供十分服务，屡次被服务企业给予高度赞赏。</p>
+
+      <p>&nbsp;</p>
+
+      <p class="img"><a href="#"><img src="../images/our/teampic01.jpg" alt="精英团队" width="514" height="244"/></a></p>
+
+      <p id="nextcolumn"><span class="btn160x34 font_14 b"><a href="../our/join.shtml">&gt;&gt;加入我们</a></span></p>
+    </div>
+  </div>
+
+  <!-- 精英团队end -->
+</div>
+<%= render "common/footer" %>
+<script type="text/javascript">
+    document.getElementById("menu_our").className = "menu_our_onclick"
+    document.getElementById("sidebar_menu03").className = "sidebar_menu_onclick"
+    var a = document.getElementById("layout_mainer")
+    var b = document.getElementById("sidebar")
+    if (a.scrollHeight < b.scrollHeight) {
+        a.style.height = b.scrollHeight + "px";
+    }
+    else {
+        b.style.height = a.scrollHeight + "px";
+    }
+</script>

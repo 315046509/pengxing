@@ -1,0 +1,99 @@
+<script>
+    <% if !flash[:error_msg].nil? && !flash[:error_msg].blank?%>
+    alert('<%=flash[:error_msg]%>');
+    <% end%>
+</script>
+<div>
+  <ul class="breadcrumb">
+    <li>
+      <a href="<%= admin_home_index_path %>">Home</a> <span class="divider">/</span>
+    </li>
+    <li>
+      <a href="<%= admin_customers_path %>">合作伙伴</a> <span class="divider">/</span>
+    </li>
+    <li>
+      添加企业伙伴
+    </li>
+  </ul>
+</div>
+<div class="row-fluid sortable">
+  <div class="box span12">
+    <div class="box-header well" data-original-title>
+      <h2><i class="icon-list-alt"></i>添加企业伙伴</h2>
+    </div>
+    <div class="box-content">
+      <div id="content" class="span10" style="padding: 20px">
+        <%= form_for @customer, :url => admin_customers_path(@roll), :method => :post, :html => {:id => "roll"} do |f| %>
+            <% if @customer.errors.any? %>
+                <div id="error_explanation" style="color: red">
+                  <p>错误:</p>
+                  <ul>
+                    <% @customer.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                  </ul>
+                </div>
+            <% end %>
+            <div class="codeExplanation">
+              <p>
+                注：建议企业内容精简
+              </p>
+            </div>
+            <div class="field">
+              <span>企业名称：</span>
+              <%= f.text_field :title %>
+            </div>
+            <br/>
+
+            <div class="field">
+              <span>企业LOGO：</span>
+              <%= f.file_field :avatar %>
+            </div>
+            <br/>
+
+            <div class="field">
+              <span>企业详细：</span>
+              <%= f.text_field :description, :style => "width:500px;height:80px" %>
+            </div>
+            </br>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">完成提交</button>
+            </div>
+        <% end %>
+        <!--/span-->
+      </div>
+    </div>
+  </div>
+</div><!--/row-->
+<script>
+    $().ready(function () {
+        $("#roll").validate({
+            rules: {
+                "customer[title]": {
+                    required: true
+                },
+                "customer[avatar]": {
+                    required: true,
+                    accept: "jpg|png"
+                },
+                "customer[description]": {
+                    required: true
+                }
+            },
+            messages: {
+                "customer[title]": {
+                    required: "请上填写企业名称"
+                },
+                "customer[avatar]": {
+                    required: "请上传图片",
+                    accept: "图片类型必须是png或jpg"
+                },
+                "customer[description]": {
+                    required: "请填写企业详细"
+                }
+            }
+        });
+    });
+</script>
+
+

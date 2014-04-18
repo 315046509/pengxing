@@ -1,0 +1,47 @@
+<%= render "common/navigation" %>
+<div id="layout_main" class="clearfix">
+  <%= render "common/menuour" %>
+  <!-- 新闻内容 -->
+  <div id="layout_mainer">
+    <div id="layout_content656">
+      <div class="services clearfix">
+        <div class="services_top"></div>
+        <div class="services_con clearfix">
+          <div class="show">
+            <div class="icon"><img src="/images/services/services_icon02.gif" alt="互动体验式多媒体开发"/></div>
+            <div class="textcon">
+              <h2 class="yahei font_18 gray"><%= @journalism.title %></h2>
+              <%= my_datetime_format @journalism.created_at %>
+              <p><%= @journalism.descrpiton.html_safe %></p>
+
+              <div class="control">
+                <ul>
+                  <li id="tab" style="float:right">
+                    <a href="javascript:void(null)" onClick="Effect('services_det',this.parentNode.id);" class="doop_a"></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="services_bottom"></div>
+      </div>
+      <p id="nextcolumn">
+        <span class="btn160x34 font_14 b"><a href="<%= journalism_ours_path %>">&gt;&gt;新闻列表</a></span>
+      </p>
+    </div>
+  </div>
+  <!-- 新闻内容end -->
+</div>
+<%= render "common/footer" %>
+<script type="text/javascript">
+    document.getElementById("menu_our").className = "menu_our_onclick"
+    var a = document.getElementById("layout_mainer")
+    var b = document.getElementById("sidebar")
+    if (a.scrollHeight < b.scrollHeight) {
+        a.style.height = b.scrollHeight + "px";
+    }
+    else {
+        b.style.height = a.scrollHeight + "px";
+    }
+</script>

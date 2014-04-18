@@ -1,0 +1,67 @@
+<div id="mainer">
+    <div id="main">
+        <div id="xins">
+            <span id="news_more">
+                <a href="our/news.shtml">
+                    <img src="images/News_more.gif" alt="更多" class="right"/>
+                </a>
+            </span>
+
+            <h2 id="news_top" class="yahei font_11 black"><a href="<%= journalism_ours_path %>">热点新闻</a></h2>
+            <ul>
+                <% @category_1_journalism.each do |q| %>
+                <!--最新动态:开始-->
+                <li>
+                    <span class="news_biao">
+                        <%= link_to truncate_u(q.title, 10), journalism_show_our_path(q) %>
+                    </span>
+                    <span class="right">
+                        <%= my_datetime_format q.created_at %>
+                    </span>
+                </li>
+                <!--最新动态:结束-->
+                <% end %>
+            </ul>
+        </div>
+        <div id="about_martix">
+            <dl>
+                <dt><img src="images/logo_about_matrix02.png" alt="长春朋兴文化传媒"/></dt>
+                <dd>
+                    <h2 class="yahei font_18 black left"> 长春朋兴文化传媒</h2>
+                    <!-- 加关注 -->
+                    <!--
+                    <div class="weibo_if">
+                        <iframe width="230" height="24" allowtransparency="true" marginwidth="0" marginheight="0"
+                                scrolling="no" frameborder="No" border="0"
+                                src="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=230&height=24&uid=1986020887&style=3&btn=red&dpc=1">
+                        </iframe>
+                    </div>
+                    -->
+                    <p class="yahei clear" style="margin-top: 5px;">
+                        我们是一家集品牌互动广告和网络全程营销的整合运营服务商。 <br/>
+                        我们专注于为品牌塑造顶尖的互联网形象，为企业营销策略提供互动解决方案。 <br/>
+                        我们旨在开创网络互动营销全新运营模式。
+                    </p>
+                </dd>
+            </dl>
+        </div>
+        <div class="clear"></div>
+        <script src="../javascripts/jquery.min.js" type="text/javascript"></script>
+        <script src="../javascripts/rollcase.js" type="text/javascript"></script>
+        <div class="caselogo">
+            <div class="caselogo_con">
+                <ul>
+                    <!--首页客户logo:开始 -->
+                    <% @customers.each do |c| %>
+                    <li>
+                        <a href="<%= clients_path %>" title="<%= c.title%>">
+                            <%= image_tag c.avatar.url(:huoban) %>
+                        </a>
+                    </li>
+                    <% end %>
+                    <!--首页客户logo:结束 -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

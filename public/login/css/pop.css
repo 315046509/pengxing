@@ -1,0 +1,132 @@
+.transparent_class {
+    display:none;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+    position:absolute;
+    top:0; left:0;
+    height:100%;
+    width:100%;
+    background:#000;
+    z-index:100;
+}
+.popup, .popup1{
+    display:none;
+    height:660px;
+    width:620px;
+    background:url(/login/img/login.gif) 15px center no-repeat;
+    box-shadow:0 0 3px #DDD;
+    position:absolute;
+    z-index:101;
+    border-radius:3px;
+    top:100px; 
+	left:100px;
+    overflow:hidden;
+    border:1px solid #DDD;	
+}
+.popup_head{
+	height:35px;
+    font-size:14px;
+    font-weight:bold;
+    padding:35px 30px 8px;
+    color:red;
+    cursor:move
+}
+.popup_close{
+    float:right;
+    font-family:Arial, Helvetica, sans-serif;
+    cursor:pointer;
+    color:#c6c6c6;
+}
+.popup_close:hover{
+    color:#666;
+}
+.popup_con{
+    height:660px;
+    padding:12px 0 0 30px;
+    line-height:1.8;
+	text-align:left;
+    position: relative;
+}
+.popup_con #popLoginError{
+    position: absolute;
+    left: 31px;
+    top: 4px;
+    width: 300px;
+    color: #B84A47;
+    padding: 5px 0 0 63px;
+}
+.popup_con p{
+	position:relative;
+	width:325px;
+	height:30px;
+	line-height: 30px;
+	padding:5px 0 25px 0;
+}
+.popup_con p.popLoginButton{
+	height:46px;
+	line-height: 46px;
+}
+.popup_con p span{
+	font-size:14px;
+}
+.popup_con p span.tips{
+	position:absolute;
+	left:190px;
+	top:7px;
+	padding:0 0 0 15px;
+	font-size:12px;
+}
+.popup_con p span.tips a, .popup_con p span.tips a:visited{
+	color:#C00;
+}
+.popup_con p label.error{
+	position:absolute;
+	top:42px;
+	left:61px;
+    color: #B84A47;
+	line-height:12px;
+}
+.popup_con p input.nfyy-big-input{
+	width: 210px;
+	_width: 230px;
+	height: 20px;
+	line-height: 20px;
+	margin-right: 5px;
+	padding: 4px 8px;
+	font-size: 14px;
+	color: #555;
+	background: #fff;
+	outline: none;
+	border: 1px solid #999;
+	-webkit-box-shadow: inset 1px 1px 3px #c3c3c3;
+	box-shadow: inset 1px 1px 3px #c3c3c3;
+}
+.popup_con p input.nfyy-login-submit{
+	position:absolute;
+	left:60px;
+	top:5px;
+	width:131px;
+	height:46px;
+	background:url(/login/img/pop_login.gif);
+	border:none;
+	outline:none;
+	cursor:pointer;
+}
+.popup_foot{
+    background:#EEE;
+    padding:6px 10px 10px;
+    text-align:right;
+}
+.popup_foot a{
+    display:inline-block;
+    padding:4px 10px 5px;
+    border-radius:3px;
+    text-decoration:none;
+}
+.popIntro{
+    padding:0 0 0 87px;
+    clear: both;
+    text-align: left;
+}

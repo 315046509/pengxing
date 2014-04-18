@@ -1,0 +1,133 @@
+<%= render "common/navigation" %>
+
+<div id="layout_main" class="clearfix">
+  <div id="sidebar">
+    <div id="sidebar_menu" class="yahei">
+      <h3><span class="font_20 black block">services</span><span class="font_14 black block">互动服务</span></h3>
+      <ul>
+        <li id="sidebar_menu01"><a href="<%= services_path %>">互动服务</a></li>
+      </ul>
+    </div>
+    <p id="sidebar_tel"><img src="../images/matrix_tel.gif" alt="联系电话"/></p>
+  </div>
+
+  <div id="layout_mainer">
+    <div id="layout_content656">
+      <p><img src="../images/services/services_title.jpg" alt="互动服务"/></p>
+
+      <p class="yahei font_14 coffee">朋兴全程营销服务模式:</p>
+
+      <p class="display8px"></p>
+
+      <p>我们深入企业营销全过程，从前期市场调查、产品定位，到落地媒体、网络宣传与微信营销、网络公关，乃至客户服务与客户关系管理。根据客户实际需求和行业特性，利用媒体传播营销专业经验，对企业媒体营销方式与网络营销效果长期监测，最终达到全面提高企业营销效果，加强企业竞争力的目的。</p>
+
+      <p>&nbsp;</p>
+
+      <div class="services clearfix">
+        <div class="services_top"></div>
+        <div class="services_con clearfix">
+          <div class="show">
+            <div class="icon"><img src="../images/services/services_icon.gif" alt="互动广告品牌营销策略"/></div>
+            <div class="textcon">
+              <h2 class="yahei font_18 gray">朋兴传媒品牌营销策略</h2>
+
+              <p>朋兴传媒深入剖析企业需求，深度研究落地媒体与网络营销中的创新和运用，为企业量身定做优质广告营销策略。</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="services_bottom"></div>
+      </div>
+      <div class="services clearfix">
+        <div class="services_top"></div>
+        <div class="services_con clearfix">
+          <div class="show">
+            <div class="icon"><img src="../images/services/services_icon02.gif" alt="互动体验式多媒体开发"/></div>
+            <div class="textcon">
+              <h2 class="yahei font_18 gray">朋兴体验式多媒体开发</h2>
+
+              <p>朋兴传媒，通过全国到闸当车杆、龙嘉机场收费处LED、网络推广、微信定位营销完美结合，让人获得耳目一新的品牌享受。</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="services_bottom"></div>
+      </div>
+      <div class="services clearfix">
+        <div class="services_top"></div>
+        <div class="services_con clearfix">
+          <div class="show">
+            <div class="icon"><img src="../images/services/services_icon03.gif" alt="网络营销整合推广"/></div>
+            <div class="textcon">
+              <h2 class="yahei font_18 gray">网络营销整合推广</h2>
+
+              <p>网络营销主要是以O2O形式，线上带动下线，线下带动线上及网络推广，结合产品特性与市场环境，量身定做高性价比网络营销推广组合，保证最佳网络宣传效果并带动线下品牌及活动。</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="services_bottom"></div>
+      </div>
+      <div class="services clearfix">
+        <div class="services_top"></div>
+        <div class="services_con clearfix">
+          <div class="show">
+            <div class="icon"><img src="../images/services/services_icon04.gif" alt="全程网络外包服务"/></div>
+            <div class="textcon">
+              <h2 class="yahei font_18 gray">全程网络外包服务</h2>
+
+              <p>专人专责，负责网络建设、营销推广、跟踪监控、后期维护等，实现企业无忧式贴身服务。</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="services_bottom"></div>
+      </div>
+      <div class="services clearfix">
+        <div class="services_top"></div>
+        <div class="services_con clearfix">
+          <div class="show">
+            <div class="icon"><img src="../images/services/services_icon04.gif" alt="客户关系管理系统"/></div>
+            <div class="textcon">
+              <h2 class="yahei font_18 gray">客户关系管理系统</h2>
+
+              <p>深入剖析教育、汽车、餐饮、金融、地产等营销流程，将数据系统融入营销各个环节，有效整合客户资源，规范客户管理流程，提高客户满意度。</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="services_bottom"></div>
+      </div>
+      <div class="services clearfix">
+        <div class="services_top"></div>
+        <div class="services_con clearfix">
+          <div class="show">
+            <div class="icon"><img src="../images/services/services_icon05.gif" alt="品牌互动网站创意设计"/></div>
+            <div class="textcon">
+              <h2 class="yahei font_18 gray">全国到闸当车杆广告媒体</h2>
+
+              <p>是唯一能够将大量的人、车流量和高层次的消费群体同时聚集的媒体，是品牌推广和公众意识建设的理想载体。</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="services_bottom"></div>
+      </div>
+      <p id="nextcolumn"><span class="btn160x34 font_14 b"><a href="<%= cases_path %>">&gt;&gt;经典案例</a></span></p>
+    </div>
+  </div>
+</div>
+<%= render "common/footer" %>
+
+<script type="text/javascript">
+    document.getElementById("menu_services").className = "menu_services_onclick"
+    document.getElementById("sidebar_menu01").className = "sidebar_menu_onclick"
+    var a = document.getElementById("layout_mainer")
+    var b = document.getElementById("sidebar")
+    if (a.scrollHeight < b.scrollHeight) {
+        a.style.height = b.scrollHeight + "px";
+    }
+    else {
+        b.style.height = a.scrollHeight + "px";
+    }
+</script>

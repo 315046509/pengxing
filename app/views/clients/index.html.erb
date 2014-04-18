@@ -1,0 +1,78 @@
+<%= render "common/navigation" %>
+<div id="layout_main" class="clearfix">
+  <div id="sidebar">
+    <div id="sidebar_menu" class="yahei">
+      <h3><span class="font_20 black block">client</span><span class="font_14 black block">合作客户</span></h3>
+      <ul>
+        <li id="sidebar_menu01"><a href="<%= clients_path %>">合作客户</a></li>
+      </ul>
+    </div>
+    <p id="sidebar_tel"><img src="../images/matrix_tel.gif" alt="联系电话"/></p>
+  </div>
+
+  <div id="layout_mainer">
+    <div id="layout_content656">
+      <p>
+        <img src="../images/client_title.jpg" alt="合作客户"/></p>
+
+      <p>
+        矩阵有幸，一直与地产、政府、金融、医疗、快销品等各大行业中的巨人同行——万科、金地、华润、融侨、恒大、红金龙、黄鹤楼、武烟、武钢、联通、民生银行、湖北审计厅、武汉市委、湖北电力、中国石化、凯迪、爱帝，一批最具实力的企业、最具潜力的品牌、最具挑战的项目。
+      </p>
+
+      <p class="display8px"></p>
+
+      <p>
+        八年来的不断努力和进取，矩阵已成为中国知名的务实派网络营销顾问机构，引领华中互动产业发展的潮流，并用事实向社会诠释互动营销的价值！</p>
+
+      <p class="display16px">
+      </p>
+      <ul id="client" class="gray_frame clearfix">
+        <!--合作客户:开始-->
+        <% @customers.each do |c| %>
+            <li>
+              <a href="">
+                <div class="shadow">
+                  <div class="box">
+                    <div class="imgthumb">
+                      <span class="thumb_shadow_right">
+                        <%= image_tag c.avatar.url(:huoban) %>
+                      </span>
+                    </div>
+                    <div class="intro">
+                      <p>
+                        <%= truncate_u(c.description, 90) %>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </li>
+        <% end %>
+        <!--合作客户:结束-->
+      </ul>
+      <div class="newspage" style="width: 660px;">
+        <!--page:start-->
+        <div class="pagination pagination-centered">
+          <ul><%= paginate @customers %></ul>
+        </div>
+        <!--page:end-->
+      </div>
+      <p id="nextcolumn">
+        <span class="btn160x34 font_14 b"><a href="<%= contacts_path %>">&gt;&gt;联系我们</a></span></p>
+    </div>
+  </div>
+</div>
+<%= render "common/footer" %>
+
+<script type="text/javascript">
+    document.getElementById("menu_client").className = "menu_client_onclick"
+    document.getElementById("sidebar_menu01").className = "sidebar_menu_onclick"
+    var a = document.getElementById("layout_mainer")
+    var b = document.getElementById("sidebar")
+    if (a.scrollHeight < b.scrollHeight) {
+        a.style.height = b.scrollHeight + "px";
+    }
+    else {
+        b.style.height = a.scrollHeight + "px";
+    }
+</script>

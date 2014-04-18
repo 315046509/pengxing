@@ -1,0 +1,178 @@
+<script>
+    <% if flash[:error_msg]%>
+    alert('<%=flash[:error_msg]%>');
+    <% end%>
+</script>
+
+<%= render "common/navigation" %>
+
+<div id="layout_main" class="clearfix">
+  <%= render "common/menuour" %>
+  <div id="layout_mainer">
+    <div id="layout_content514">
+      <p><img src="../images/our/our_title.jpg" alt="关于我们"/></p>
+
+      <p><img src="../images/our/our_intro.jpg" alt="矩阵互动，邀您共同携手打造一流的品牌互联网形象！"></p>
+
+      <p class="b">有意者可在线申请职位或将个人简历发送至邮箱：<a href="mailto:job@juzhen.com" target="_blank">job@juzhen.com</a>，我司将认真查看，合则电话约见！
+      </p>
+
+      <p class="b">招聘负责人：lily　联系电话：13971359973　邮箱：<a href="mailto:jiall@juzhen.net" target="_blank">jiall@juzhen.net</a>　
+      </p>
+
+      <p class="solid_line"></p>
+      <!--加入我们:开始-->
+      <p class="jobtitle clearfix">
+        <span class="yahei font_20 jobname">资深网页设计师</span>
+        <span class="btn160x34 right">
+          <a class="videoDownload boxy" href="javascript:">应聘该职位</a>
+        </span>
+      </p>
+
+      <p class="font_14 yahei"> 任职资格：</p>
+      <ol class="tips">
+        <li>熟练掌握各种网页制作和图形处理工具，精通Flash动画设计与制作；</li>
+        <li>能够将品牌形象在互动领域延伸，具极好的审美能力，思维活跃，富有创意；</li>
+        <li>愿意深入了解用户可用性，对交互设计有一定研究；</li>
+        <li>能独立开展工作，诚恳好学，良好的团队沟通和协作能力；</li>
+        <li>两年以上网页设计经验或美术设计专业毕业者优先；</li>
+        <li>提交简历务必附带设计案例。</li>
+      </ol>
+      <p class="solid_line"></p>
+
+      <p class="jobtitle clearfix">
+        <span class="yahei font_20 jobname">客服</span>
+        <span class="btn160x34 right">
+          <a class="videoDownload boxy" href="javascript:">应聘该职位</a>
+        </span>
+      </p>
+
+      <p class="font_14 yahei"> 任职资格：</p>
+      <ol class="tips">
+        <li>普通话标准，具服务意识； <br>
+        </li>
+        <li>较强的语言表达及沟通协调能力；</li>
+        <li>善于学习，工作积极主动，责任心强；</li>
+        <li>能够独立处理常见技术问题；</li>
+        <li>有互联网/广告/地产公司等相关行业工作经验者优先。</li>
+      </ol>
+      <!--加入我们:结束-->
+      <p id="nextcolumn">
+        <span class="btn160x34 font_14 b"><a href="<%= joinus_ours_path %>">&gt;&gt;招聘信息</a></span></p>
+    </div>
+  </div>
+</div>
+<%= render "common/footer" %>
+<script type="text/javascript">
+    document.getElementById("menu_our").className = "menu_our_onclick"
+    document.getElementById("sidebar_menu04").className = "sidebar_menu_onclick"
+    var a = document.getElementById("layout_mainer")
+    var b = document.getElementById("sidebar")
+    if (a.scrollHeight < b.scrollHeight) {
+        a.style.height = b.scrollHeight + "px";
+    }
+    else {
+        b.style.height = a.scrollHeight + "px";
+    }
+</script>
+<!---------------------------------- 登录弹窗 ------------------------------------------->
+<link href="../login/css/pop.css" media="screen" rel="stylesheet"/>
+<script src="../login/js/jquery.pop.js"></script>
+<script src="../login/js/jquery.validate.js"></script>
+<div class="transparent_class"></div>
+<div class="popup">
+  <div class="popup_head">
+    <span class="popup_close" title="点击关闭">关闭</span></div>
+  <div class="popup_con g-ltl">
+    <%= form_tag user_create_ours_path, :method => "post", :id => "login_form" do %>
+        <p id="popLoginError"></p>
+
+        <p>
+          <span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span>
+          <input class="nfyy-big-input" name="name" type="text"/>
+        </p>
+
+        <p>
+          <span>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</span>
+          <input class="nfyy-big-input" name="sex" type="text"/>
+        </p>
+
+        <p>
+          <span>年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄：</span>
+          <input class="nfyy-big-input" name="age" type="text"/>
+        </p>
+
+        <p>
+          <span>身&nbsp;&nbsp;份&nbsp;&nbsp;证：</span>
+          <input class="nfyy-big-input" name="card_id" type="text"/>
+        </p>
+
+        <p>
+          <span>手机号码：</span>
+          <input class="nfyy-big-input" name="tel" type="text"/>
+        </p>
+
+        <p>
+          <span>家庭住址：</span>
+          <input class="nfyy-big-input" name="address" type="text"/>
+        </p>
+
+        <p>
+          <span>工作年限：</span>
+          <input class="nfyy-big-input" name="experience" type="text"/>
+        </p>
+
+        <p>
+          <span>应聘职位：</span>
+          <input class="nfyy-big-input" name="job" type="text"/>
+        </p>
+
+        <p class="popLoginButton">
+          <input class="nfyy-login-submit" name="commit" type="submit" value=""/>
+
+        <p/>
+    <% end %>
+    <script type="text/javascript">
+        $("#login_form").validate({
+            rules: {
+                "name": {
+                    required: true
+                },
+                "password": {
+                    required: true
+                }
+            },
+            messages: {
+                'name': {
+                    required: '用户名不能为空'
+                },
+                "password": {
+                    required: '密码不能为空'
+                }
+            },
+            errorPlacement: function (error, element) {
+                error.appendTo(element.parent());
+            },
+            submitHandler: function (form) {  //通过之后回调
+                var param = $("#login_form").serialize();
+                $.ajax({
+                    url: "<%= root_path %>",
+                    type: "post",
+                    dataType: "json",
+                    data: param,
+                    success: function (data) {
+                        var award = eval(data);
+                        if (award.success == 0) {
+                            $.get('<%= root_path %>');
+                        }
+                        if (award.success == 1) {
+                            $("#popLoginError").html("帐号或密码错误");
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+  </div>
+</div>
+<!----------------------------------------   end ---------------------------------------->

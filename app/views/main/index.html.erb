@@ -1,0 +1,16 @@
+<%= render "common/navigation" %>
+<%= render "common/huandengpian" %>
+<%= render "common/dongtai" %>
+<%= render "common/footer" %>
+
+<script type="text/javascript">
+    document.getElementById("menu_home").className = "menu_home_onclick"
+    var a = document.getElementById("layout_mainer")
+    var b = document.getElementById("sidebar")
+    if (a.scrollHeight < b.scrollHeight) {
+        a.style.height = b.scrollHeight + "px";
+    }
+    else {
+        b.style.height = a.scrollHeight + "px";
+    }
+</script>
