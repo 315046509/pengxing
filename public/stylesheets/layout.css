@@ -197,12 +197,6 @@
     position: relative;
 }
 
-.services_top {
-    background: url(../images/services/services_top.gif) no-repeat;
-    height: 9px;
-    font-size: 0;
-}
-
 .services_con {
     background: url(../images/services/services_bg.gif) repeat-y;
 }
@@ -227,12 +221,6 @@
 .services_con .show .textcon p {
     line-height: 20px;
     margin-top: 5px;
-}
-
-.services_bottom {
-    background: url(../images/services/services_bottom.gif) no-repeat;
-    height: 9px;
-    font-size: 0;
 }
 
 .control a {
