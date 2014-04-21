@@ -10,26 +10,25 @@
       <a href="#">Home</a> <span class="divider">/</span>
     </li>
     <li>
-      <a href="<%= admin_journalisms_path %>">新闻管理</a> <span class="divider">/</span>
+      <a href="<%= admin_job_index_path %>">招聘管理</a> <span class="divider">/</span>
     </li>
     <li>
-      新闻修改
+      信息修改
     </li>
   </ul>
 </div>
 <div class="row-fluid sortable ui-sortable">
   <div class="box span12">
     <div class="box-header well" data-original-title="">
-      <h2><i class="icon-edit"></i> 新闻修改</h2>
+      <h2><i class="icon-edit"></i> 信息修改</h2>
     </div>
     <div class="box-content">
-      <%= form_for @journalism, :url => admin_journalism_path, :method => "put", :html => {:id => "verifytitle", :class => "form-horizontal"} do |f| %>
-          <legend>新闻修改</legend>
-          新闻标题：<%= @journalism.title %>
-          <br/>
-          新闻分类：<%= @journalism.question_category_name %>
-          <%= f.label "新闻内容：" %>
-          <%= f.cktext_area :descrpiton %>
+      <%= form_for @job, :url => admin_job_path, :method => "put", :html => {:id => "verifytitle", :class => "form-horizontal"} do |f| %>
+          <legend>信息修改</legend>
+          <%= f.label "招聘职位：" %>
+          <%= f.text_field :title %>
+          <%= f.label "任职资格：" %>
+          <%= f.cktext_area :description %>
           <div class="form-actions">
             <button type="submit" class="btn btn-primary">完成提交</button>
           </div>
@@ -42,13 +41,19 @@
     $().ready(function () {
         $("#verifytitle").validate({
             rules: {
-                "journalism[descrption]": {
+                "job[title]": {
+                    required: true
+                },
+                "job[description]": {
                     required: true
                 }
             },
             messages: {
-                "journalism[descrption]": {
-                    required: "内容不能为空"
+                "job[title]": {
+                    required: "招聘职位不能为空"
+                },
+                "job[description]": {
+                    required: "任职资格不能为空"
                 }
             }
         });

@@ -6,19 +6,9 @@ class Admin::AccountsController < Admin::MainController
     @accounts = @accounts.where("id = ?", params[:member_id]) unless params[:member_id].blank?
     @accounts = @accounts.where("name like ?", "%#{params[:name]}%") unless params[:name].blank?
     @accounts = @accounts.where("tel like ?", "%#{params[:tel]}%") unless params[:tel].blank?
-    @accounts = @accounts.where("email like ?", "%#{params[:email]}%") unless params[:email].blank?
-    @accounts = @accounts.where("sex_id like ?", "%#{params[:sex_id]}%") unless params[:sex_id].blank?
-    @accounts = @accounts.where("address like ?", "%#{params[:address]}%") unless params[:address].blank?
-    @accounts = @accounts.where("created_at >= ?", params[:begin_time]) unless params[:begin_time].blank?
-    @accounts = @accounts.where("created_at < ?", params[:end_time]+" 24:00:00") unless params[:end_time].blank?
+    @accounts = @accounts.where("experience like ?", "%#{params[:experience]}%") unless params[:experience].blank?
+    @accounts = @accounts.where("job like ?", "%#{params[:job]}%") unless params[:job].blank?
     @accounts = @accounts.page(params[:page]).per(20)
-  end
-
-  #   删除
-  def destroy
-    @journalism = Member.find(params[:id])
-    flash[:error_msg] = @journalism.destroy ? "删除成功" : "请稍后再试"
-    redirect_to admin_accounts_path and return
   end
 end
 

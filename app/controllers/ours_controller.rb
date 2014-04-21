@@ -8,6 +8,8 @@ class OursController < ApplicationController
 
   # 加入我们（招聘）
   def joinus
+    # 招聘信息
+    @jobs = Job.order_ct_desc.page(params[:page]).per(3)
     # 公司告示
     @category_2_name = Journalism.question_category_name(2)
     @category_2_journalism = Journalism.where({:question_category_id => 2}, "title <> ''").order_ct_desc.page(params[:page]).per(1)
@@ -53,27 +55,11 @@ class OursController < ApplicationController
         :job => params[:member][:job]
     )
     if @member.save
-      flash[:error_msg] = "申请成功！"
+      flash[:error_msg]="申请成功，审核后，我们将电话通知您面试"
       redirect_to joinus_ours_path and return
     else
-      flash[:error_msg] = @member.errors.values.join('\r')
+      flash[:error_msg]="申请失败，请核实信息是否有误"
       redirect_to :back and return
     end
-  end
-
-  # 手机号重复验证
-  # 如果返回true   可以使用
-  # 如果返回false   不可以使用
-  def check_login
-    tel = params[:member][:tel]
-    render :text => Member.check_login_exist(tel) ? "false" : "true"
-  end
-
-  # 身份证重复验证
-  # 如果返回true   可以使用
-  # 如果返回false   不可以使用
-  def check_card
-    card_id = params[:member][:card_id]
-    render :text => Member.check_card_exist(card_id) ? "false" : "true"
   end
 end

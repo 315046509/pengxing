@@ -14,8 +14,8 @@
 .popup, .popup1{
     display:none;
     height:660px;
-    width:620px;
-    background:url(/login/img/login.gif) 15px center no-repeat;
+    width:624px;
+    background:url(/login/img/login.gif) 3px center no-repeat;
     box-shadow:0 0 3px #DDD;
     position:absolute;
     z-index:101;

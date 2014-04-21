@@ -4,10 +4,10 @@
       <a href="#">Home</a> <span class="divider">/</span>
     </li>
     <li>
-      <a href="#">用户管理</a> <span class="divider">/</span>
+      <a href="#">简历管理</a> <span class="divider">/</span>
     </li>
     <li>
-      用户列表
+      应聘者信息
     </li>
   </ul>
 </div>
@@ -21,40 +21,36 @@
       <table class="table table-striped table-bordered bootstrap-datatable datatable">
         <thead>
         <tr>
+          <th>ID查询</th>
           <th>姓名查询</th>
-          <th>邮箱查询</th>
           <th>手机号查询</th>
-          <th>性别查询</th>
-          <th>住址查询</th>
-          <th>时间查询</th>
+          <th>工作经验查询</th>
+          <th>应聘职位</th>
           <th>搜索</th>
           <th>重置</th>
         </tr>
         </thead>
         <tbody>
         <%= form_for :account, :url => admin_accounts_path, :html => {:method => "get"} do %>
+            <!--ID-->
+            <td>
+              <%= text_field_tag "member_id", "", :id => "id", :class => "id_search" %>
+            </td>
             <!--姓名-->
             <td>
               <%= text_field_tag "name", "", :id => "name", :class => "id_search" %>
-            </td>
-            <!--邮箱-->
-            <td>
-              <%= text_field_tag "email", "", :id => "email", :class => "id_search" %>
             </td>
             <!--手机号-->
             <td>
               <%= text_field_tag "tel", "", :id => "tel", :class => "id_search" %>
             </td>
-            <!--性别-->
-            <td><%= select_tag :sex_id, options_for_select("女士" => 1, "先生" => 0), :prompt => "请选择", :class => "id_search" %></td>
-            <!--住址-->
+            <!--工作经验-->
             <td>
-              <%= text_field_tag "address", "", :id => "address", :class => "id_search" %>
+              <%= text_field_tag "experience", "", :id => "experience", :class => "id_search" %>
             </td>
-            <!--时间-->
+            <!--应聘职位-->
             <td>
-              <%= text_field_tag :start_time, params[:start_time], :class => "date_search" %>
-              ~ <%= text_field_tag :final_time, params[:final_time], :class => "date_search" %>
+              <%= text_field_tag "job", "", :id => "job", :class => "id_search" %>
             </td>
             <!--搜索-->
             <td>
@@ -73,21 +69,20 @@
 <div class="row-fluid sortable">
   <div class="box span12">
     <div class="box-header well" data-original-title>
-      <h2><i class="icon-list-alt"></i> 用户列表</h2>
+      <h2><i class="icon-list-alt"></i> 应聘者列表</h2>
     </div>
     <div class="box-content">
       <table class="table table-striped table-bordered bootstrap-datatable datatable">
         <thead>
         <tr>
           <th>ID</th>
-          <th>真实姓名</th>
-          <th>身份证</th>
-          <th>性别</th>
-          <th>手机号</th>
-          <th>邮箱地址</th>
-          <th>家庭住址</th>
-          <th>注册时间</th>
-          <th>操作</th>
+          <th>姓名</th>
+          <th>手机号码</th>
+          <th>工作经验</th>
+          <th>应聘职位</th>
+          <th>申请时间</th>
+          <th>下载简历</th>
+          <th>删除</th>
         </tr>
         </thead>
         <tbody>
@@ -95,12 +90,11 @@
             <tr>
               <td><%= account.id %></td>
               <td><%= account.name %></td>
-              <td><%= account.card_id %></td>
-              <td class="center"><%= account.sex_id > 0 ? "女士" : "先生" %></td>
-              <td class="center"><%= account.tel %></td>
-              <td><%= account.email %></td>
-              <td><%= account.address %></td>
+              <td><%= account.tel %></td>
+              <td><%= account.experience %></td>
+              <td><%= account.job %></td>
               <td class="center"><%= my_datetime_format account.created_at %></td>
+              <td><%= link_to '下载简历' %></td>
               <td><%= link_to '删除', admin_account_path(account), :method => :delete, :confirm => "删除后无法恢复，您确定要删除吗?" %></td>
             </tr>
         <% end %>

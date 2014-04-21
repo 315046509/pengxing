@@ -5,16 +5,13 @@ Pxwh::Application.routes.draw do
   resources :ours do
     collection do
       post 'user_create'
-      get 'check_login'
-      get 'check_card'
       get 'joinus'
       get 'elite_team'
       get 'journalism'
-      get 'login'
     end
-     member do
-       get 'journalism_show'
-     end
+    member do
+      get 'journalism_show'
+    end
   end
   # 互动服务
   resources :services
@@ -34,7 +31,9 @@ Pxwh::Application.routes.draw do
         post 'check_login'
       end
     end
-    # 用户
+    # 招聘管理
+    resources :job
+    # 求职简历
     resources :accounts
     # 首页
     resources :home

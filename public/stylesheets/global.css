@@ -86,7 +86,7 @@ a img{border:none;}
 .newcase_texts{width:345px; float:left;}
 #newcase_page{float:left; width:30px; height:29px; line-height:29px;}
 #newcase_pageshow{float:left; margin-left:12px; width:30px; height:29px; line-height:29px;}
-#search_box{width:200px; height:29px; float:right; line-height:29px; overflow:hidden;}
+#search_box{width:240px; height:29px; float:right; line-height:29px; overflow:hidden;}
 #search_box a{color:#000; text-decoration:none;}
 #search_box a:hover{color:#d90011;}
 #search_box *{vertical-align:middle;}
