@@ -16,6 +16,6 @@ module ApplicationHelper
   end
 
   def my_datetime(datetime)
-    datetime.strftime(" %Y年%m月%d日")
+    datetime.strftime(" %Y.%m.%d.")
   end
 end
