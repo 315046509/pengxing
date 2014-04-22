@@ -1,3 +1,4 @@
+<%= render 'common/kefu' %>
 <div id="mainer">
     <div id="main">
         <div id="xins">
@@ -13,10 +14,10 @@
                 <!--最新动态:开始-->
                 <li>
                     <span class="news_biao">
-                        <%= link_to truncate_u(q.title, 10), journalism_show_our_path(q) %>
+                        <%= link_to truncate_u(q.title, 20), journalism_show_our_path(q) %>
                     </span>
                     <span class="right">
-                        <%= my_datetime_format q.created_at %>
+                        <%= my_datetime q.created_at %>
                     </span>
                 </li>
                 <!--最新动态:结束-->

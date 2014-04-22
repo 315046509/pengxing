@@ -14,4 +14,8 @@ module ApplicationHelper
     end
     return text
   end
+
+  def my_datetime(datetime)
+    datetime.strftime(" %Y年%m月%d日")
+  end
 end

@@ -1,0 +1,36 @@
+<!-- 客服 -->
+<div class="serviceleft">
+  <div class="si_serviceleft">
+    <div class="si_serviceleft2" style="display: block;">
+      <ul>
+        <li class="si_serviceleftLI1" style="">
+          <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes">
+            朋兴客服
+          </a>
+        </li>
+        <li class="si_serviceleftLI2" style="">
+          <div style="display: none;"><img src="/images/weixin/wx2wm.png"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+    $(function () {
+        $(".si_serviceleftLast").hover(function () {
+            $(".si_serviceleftLast div").fadeIn(0);
+        }, function () {
+            $(".si_serviceleftLast div").fadeOut(0);
+        })
+        $(".si_serviceleftLI2").hover(function () {
+            $(".si_serviceleftLI2 div").fadeIn(0);
+        }, function () {
+            $(".si_serviceleftLI2 div").fadeOut(0);
+        })
+        $(".si_serviceleft2 ul li").hover(function () {
+            $(this).css('background-color', '#d93d69');
+        }, function () {
+            $(this).css('background-color', '');
+        })
+    })
+</script>
