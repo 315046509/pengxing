@@ -18,6 +18,11 @@
   <meta name="author" content="Muhammad Usman"/>
   <!-- The styles -->
   <link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet"/>
+
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  
   <style type="text/css">
       body {
           padding-bottom: 40px;
@@ -132,5 +137,6 @@
 <script src="js/jquery.history.js"></script>
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
+
 </body>
 </html>
