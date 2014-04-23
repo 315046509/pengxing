@@ -10,5 +10,12 @@ class Admin::AccountsController < Admin::MainController
     @accounts = @accounts.where("job like ?", "%#{params[:job]}%") unless params[:job].blank?
     @accounts = @accounts.page(params[:page]).per(20)
   end
+
+  #   删除
+  def destroy
+    @accounts = Member.find(params[:id])
+    flash[:error_msg] = @accounts.destroy ? "删除成功" : "请稍后再试"
+    redirect_to admin_accounts_path and return
+  end
 end
 
