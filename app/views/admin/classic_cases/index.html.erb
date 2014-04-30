@@ -22,6 +22,7 @@
         <tr>
           <th>ID</th>
           <th>案例名称</th>
+          <th>案例分类</th>
           <th>案例图片</th>
           <th>案例内容</th>
           <th>创建时间</th>
@@ -39,8 +40,9 @@
             <tr>
               <td><%= roll.id %></td>
               <td><%= roll.title %></td>
+              <td><%= roll.question_category_name %></td>
               <td><%= image_tag roll.avatar.url(:thumb) %></td>
-              <td><%= roll.description %></td>
+              <td><%= truncate_u(roll.description, 10) %></td>
               <td class="center"><%= my_datetime_format roll.created_at %></td>
               <td>
                 <a class="btn btn-info" href="<%= admin_classic_case_path(roll) %>">

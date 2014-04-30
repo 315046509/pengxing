@@ -46,6 +46,12 @@
             <br/>
 
             <div class="field">
+              <span>案例分类：</span>
+              <%= f.select :question_category_id, options_for_select(Case::QUESTION_CATEGORYS) %>
+            </div>
+            <br/>
+
+            <div class="field">
               <span>选择图片：</span>
               <%= f.file_field :avatar %>
             </div>
