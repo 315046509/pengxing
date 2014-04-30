@@ -1,0 +1,74 @@
+<%= render "common/navigation" %>
+<div id="layout_main" class="clearfix">
+  <div id="sidebar">
+    <div id="sidebar_menu" class="yahei">
+      <h3>
+        <span class="font_20 black block">client</span>
+        <span class="font_14 black block">合作客户</span>
+      </h3>
+      <ul>
+        <li id="sidebar_menu01"><a href="http://www.ccpxcm.com/clients">合作客户</a></li>
+      </ul>
+    </div>
+    <p id="sidebar_tel">
+      <a target="_blank" href="http://www.ccpxcm.com/clients">
+        <img src="/images/matrix_tel.gif" alt="朋兴传媒"/>
+      </a>
+    </p>
+  </div>
+
+  <div id="layout_mainer">
+    <div id="layout_content656">
+      <p>
+        <img src="../images/client_title.jpg" alt="朋兴传媒合作客户"/>
+      </p>
+      <!--合作客户:开始-->
+      <div id="case_name">
+        <h2 class="btn160x34 font_18 yahei b left">
+          <%= @customer.title %>
+        </h2>
+                    <span class="btn160x34 b right" style="margin-top: 12px;">
+                        <a id="HyperLink1" href="http://www.ccpxcm.com/">
+                          访问网站首页
+                        </a>
+                    </span>
+      </div>
+
+      <div id="case_intro">
+        <p class="font_14 yahei b">
+          企业简介
+        </p>
+
+        <p>
+          <%= @customer.description %>
+        </p>
+
+        <p>&nbsp;</p>
+
+        <p class="solid_line"></p>
+
+        <p class="font_14 yahei b">
+          合作伙伴
+        </p>
+
+        <p>
+          <%= image_tag @customer.avatar.url(:zhengchang) %>
+        </p>
+
+        <p class="solid_line"></p>
+      </div>
+      <!--合作客户:结束-->
+      <p id="nextcolumn">
+        <span class="btn160x34 font_14 b"><a href="http://www.ccpxcm.com/clients">&gt;&gt;返回</a></span></p>
+    </div>
+  </div>
+</div>
+<%= render "common/footer" %>
+
+<script type="text/javascript">
+    document.getElementById("menu_client").className = "menu_client_onclick"
+    document.getElementById("sidebar_menu01").className = "sidebar_menu_onclick"
+    var a = document.getElementById("layout_mainer")
+    var b = document.getElementById("sidebar")
+</script>
+<%= render 'common/kefu' %>
