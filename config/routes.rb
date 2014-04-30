@@ -16,7 +16,13 @@ Pxwh::Application.routes.draw do
   # 互动服务
   resources :services
   # 经典案例
-  resources :cases
+  resources :cases do
+    collection do
+      get 'dangche'
+      get 'longjia'
+      get 'weixin'
+    end
+  end
   # 合作伙伴
   resources :clients
   # 联系我们

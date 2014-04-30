@@ -10,6 +10,18 @@ class Case < ActiveRecord::Base
 
   scope :order_ct_desc, lambda { order("created_at DESC") }
 
+  QUESTION_CATEGORYS = [["未分类", 0], ["档车杆", 1], ["龙嘉机场", 2], ["微信", 3]]
+
+  def Case.question_category_name(category_id)
+    QUESTION_CATEGORYS.each do |item|
+      return item[0] if item[1] == category_id
+    end
+  end
+
+  def question_category_name
+    Case.question_category_name(self.question_category_id)
+  end
+
   @filepath="public/roll/"
   @previewpath = "previews/"
 

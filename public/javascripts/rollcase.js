@@ -1,4 +1,4 @@
-//¿Í»§LOGO
+//ï¿½Í»ï¿½LOGO
 (function () {
     $.fn.caselogo = function () {
         function repeat(str, n) {
@@ -96,7 +96,7 @@ $(document).ready(function () {
         if (autoscrolling) {
             $('.caselogo').trigger('next');
         }
-    }, 6000);
+    }, 1000);
 });
 
 
