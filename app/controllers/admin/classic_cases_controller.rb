@@ -17,10 +17,11 @@ class Admin::ClassicCasesController < Admin::MainController
         avatar = params[:case][:avatar]
         title = params[:case][:title]
         description = params[:case][:description]
+        question_category_id = params[:case][:question_category_id]
         imagename = avatar.original_filename
         avatar.original_filename = Time.now.strftime("%Y%m%d%h%m%s")<<rand(99999).to_s<<imagename[imagename.length-4, 4]
-        if !avatar.blank? && !title.blank? && !description.blank?
-          rc = Case.create(:avatar => avatar, :title => title, :description => description)
+        if !avatar.blank? && !title.blank? && !description.blank? && !question_category_id.blank?
+          rc = Case.create(:avatar => avatar, :title => title, :description => description, :question_category_id => question_category_id)
           if rc.valid?
           else
             msg = ""
@@ -54,6 +55,6 @@ class Admin::ClassicCasesController < Admin::MainController
   end
 
   def roll_params
-    params.require(:case).permit(:avatar, :title, :description)
+    params.require(:case).permit(:avatar, :title, :description, :question_category_id)
   end
 end

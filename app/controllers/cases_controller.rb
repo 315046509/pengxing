@@ -8,6 +8,11 @@ class CasesController < ApplicationController
     @cases = Case.order_ct_desc.page(params[:page]).per(12)
   end
 
+  # 显示页
+  def show
+    @case = Case.find params[:id]
+  end
+
   # 档车杆
   def dangche
     # 公司告示
