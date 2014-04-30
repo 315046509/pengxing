@@ -96,7 +96,7 @@ $(document).ready(function () {
         if (autoscrolling) {
             $('.caselogo').trigger('next');
         }
-    }, 1000);
+    }, 2000);
 });
 
 
