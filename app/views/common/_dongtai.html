@@ -65,7 +65,7 @@
                     <!--首页客户logo:开始 -->
                     <% @customers.each do |c| %>
                     <li>
-                        <a href="<%= clients_path %>" title="<%= c.title%>">
+                        <a href="<%= client_path(c) %>" title="<%= c.title%>">
                             <%= image_tag c.avatar.url(:huoban) %>
                         </a>
                     </li>
