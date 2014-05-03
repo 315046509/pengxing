@@ -9,6 +9,28 @@
   <meta name="description" content="长春朋兴文化传媒有限制是以道闸挡车干,龙嘉机场LED,FM94.3,微信开发,网站开发,活动宣传策划为主营的传媒公司。www.pxcm.com">
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <link rel="shortcut icon" href="images/favicon.png">
+  <!-- 兼容 -->
+  <script language="javascript" type="text/javascript">
+      function addfavorite(obj, url, title) {
+          !url ? url = location.href : null;
+          !title ? title = document.title : null;
+          try {
+              window.external.addFavorite(url, title);
+              return false;
+          } catch (e) {
+              try {
+                  window.sidebar.addPanel(title, url, "");
+                  return false;
+              } catch (e) {
+                  alert("加入收藏失败，请使用Ctrl+D进行添加");
+                  if (location.href.toLowerCase().indexOf(obj.href.toLowerCase(), 0) >= 0) {
+                      return false;
+                  }
+              }
+          }
+      }
+  </script>
+  <!-- end -->
   <%= stylesheet_link_tag "global", "home", "layout" %>
   <%= javascript_include_tag "doop_services", "jquery.min", "rollcase", "slides" %>
   <!-- 客服 -->
@@ -21,3 +43,9 @@
 <a href="http://webscan.360.cn/index/checkwebsite/url/www.ccpxcm.com" name="6378f1467640a60ce287a114229a2154"></a>
 </body>
 </html>
+
+
+
+
+
+

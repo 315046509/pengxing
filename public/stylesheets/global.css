@@ -107,7 +107,7 @@ div.newspage span.disabled{border: #fff 1px solid; padding:2px 5px; color:#666; 
 
 /*脚部定义---------------------------------------------------------------*/
 #footer{border-top:1px solid #d9d9d9;}
-#copyright{padding:15px 0 30px 0; width:850px; float:left;}
+#copyright{padding:15px 0 30px 0; width:100%; float:left;}
 #footer p{line-height:18px;}
 #footer p a:hover{color:#00468c;/* text-decoration:underline;*/}
 #contact{padding:15px 0 30px 0; width:150px; float:left;}
