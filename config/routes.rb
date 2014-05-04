@@ -8,6 +8,7 @@ Pxwh::Application.routes.draw do
       get 'joinus'
       get 'elite_team'
       get 'journalism'
+      get 'daozha'
     end
     member do
       get 'journalism_show'
