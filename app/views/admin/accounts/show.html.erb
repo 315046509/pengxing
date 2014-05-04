@@ -1,0 +1,53 @@
+<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+<div>
+  <ul class="breadcrumb">
+    <li>
+      <a href=#">Home</a> <span class="divider">/</span>
+    </li>
+    <li>
+      <a href="<%= admin_accounts_path %>">简历管理</a> <span class="divider">/</span>
+    </li>
+    <li>
+      应聘者简历
+    </li>
+  </ul>
+</div>
+<div class="row-fluid sortable">
+  <div class="box span12">
+    <div class="box-content">
+      <p>
+        姓名：<%= @account.name %>
+      </p>
+
+      <p>
+        性别：<%= @account.sex %>
+      </p>
+
+      <p>
+        年龄：<%= @account.age %>
+      </p>
+
+      <p>
+        身份证：<%= @account.card_id %>
+      </p>
+
+      <p>
+        手机：<%= @account.tel %>
+      </p>
+
+      <p>
+        家庭住址：<%= @account.address %>
+      </p>
+
+      <p>
+        工作经验：<%= @account.experience %>
+      </p>
+
+      <p>
+        应聘岗位：<%= @account.job %>
+      </p>
+      <br/><br/>
+    </div>
+  </div>
+  <!--/span-->
+</div><!--/row-->

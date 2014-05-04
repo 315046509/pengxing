@@ -4,7 +4,7 @@
       <a href="#">Home</a> <span class="divider">/</span>
     </li>
     <li>
-      <a href="#">简历管理</a> <span class="divider">/</span>
+      <a href="<%= admin_accounts_path %>">简历管理</a> <span class="divider">/</span>
     </li>
     <li>
       应聘者信息
@@ -81,7 +81,7 @@
           <th>工作经验</th>
           <th>应聘职位</th>
           <th>申请时间</th>
-          <th>下载简历</th>
+          <th>浏览简历</th>
           <th>删除</th>
         </tr>
         </thead>
@@ -94,7 +94,7 @@
               <td><%= account.experience %></td>
               <td><%= account.job %></td>
               <td class="center"><%= my_datetime_format account.created_at %></td>
-              <td><%= link_to '下载简历' %></td>
+              <td><%= link_to '浏览简历', admin_account_path(account) %></td>
               <td><%= link_to '删除', admin_account_path(account), :method => :delete, :confirm => "删除后无法恢复，您确定要删除吗?" %></td>
             </tr>
         <% end %>

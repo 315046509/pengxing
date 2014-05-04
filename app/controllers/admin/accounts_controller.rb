@@ -11,6 +11,10 @@ class Admin::AccountsController < Admin::MainController
     @accounts = @accounts.page(params[:page]).per(20)
   end
 
+  def show
+    @account = Member.find params[:id]
+  end
+
   #   删除
   def destroy
     @accounts = Member.find(params[:id])
