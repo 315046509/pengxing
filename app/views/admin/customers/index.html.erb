@@ -26,6 +26,7 @@
           <th>企业详细</th>
           <th>创建时间</th>
           <th>查看</th>
+          <th>修改</th>
           <th>删除</th>
         </tr>
         </thead>
@@ -43,9 +44,15 @@
               <td><%= truncate_u(roll.description, 30) %></td>
               <td class="center"><%= my_datetime_format roll.created_at %></td>
               <td>
-                <a class="btn btn-info" href="<%= admin_customer_path(roll) %>">
-                  <i class="icon-edit icon-white"></i>
+                <a class="btn btn-success" href="<%= admin_customer_path(roll) %>">
+                  <i class="icon-zoom-in icon-white"></i>
                   查看
+                </a>
+              </td>
+              <td>
+                <a class="btn btn-info" href="<%= edit_admin_customer_path(roll) %>">
+                  <i class="icon-edit icon-white"></i>
+                  修改
                 </a>
               </td>
               <td>

@@ -41,6 +41,25 @@ class Admin::CustomersController < Admin::MainController
     @customer = Customer.find params[:id]
   end
 
+  def edit
+    @customer = Customer.find(params[:id])
+  end
+
+  def update
+    @job = Customer.find(params[:id])
+    update_category = @job.update_attributes(
+        :title => params[:customer][:title],
+        :description => params[:customer][:description]
+    )
+    if update_category
+      respond_to do |job|
+        job.html {
+          redirect_to admin_customers_path and return
+        }
+      end
+    end
+  end
+
   def destroy
     @customer = Customer.find params[:id]
     Customer.deletefile(@customer.id)

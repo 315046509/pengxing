@@ -23,9 +23,11 @@
     </div>
     <div class="box-content">
       <div id="content" class="span10" style="padding: 20px">
-        <h2><%= @roll.title %></h2>
+        <%= @roll.title %>
+        <br/>
         <%= image_tag @roll.avatar.url(:zhengchang) %>
-        <h3><%= @roll.description %></h3>
+        <br/>
+        <%= @roll.description %>
         <!--/span-->
       </div>
     </div>
