@@ -5,7 +5,32 @@
   <div id="layout_mainer">
     <div id="layout_content514">
       <p>
-        <img src="../images/our/our_title.jpg" alt="关于我们"/></p>
+        <img src="../images/our/our_title.jpg" alt="关于我们"/>
+      </p>
+      <!--            分类               -->
+      <div class="sort">
+        <div class="solid_line">
+        </div>
+        <h4 class="font_12 coffee">
+          按类型分类
+        </h4>
+        <ul>
+          <li>
+            <a id="hl1_st1" class="red" href="http://www.ccpxcm.com/ours/journalism">不限 </a>|
+          </li>
+          <li>
+            <a id="hl1_st2" href="http://www.ccpxcm.com/ours/news_trends">新闻动态 </a>|
+          </li>
+          <li>
+            <a id="hl1_st3" href="http://www.ccpxcm.com/ours/dynamic_announcement">公告动态</a>
+          </li>
+        </ul>
+        <div class="clear"></div>
+        <div class="solid_line"></div>
+      </div>
+      <div class="clear">
+      </div>
+      <!--            end               -->
       <ul id="news" class="clearfix">
         <!--最新动态:开始-->
         <% @journalisms.each do |q| %>

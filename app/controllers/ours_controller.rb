@@ -29,8 +29,28 @@ class OursController < ApplicationController
     # 公司告示
     @category_2_name = Journalism.question_category_name(2)
     @category_2_journalism = Journalism.where({:question_category_id => 2}, "title <> ''").order_ct_desc.page(params[:page]).per(1)
-
+    # 全部
     @journalisms = Journalism.order_ct_desc.page(params[:page]).per(10)
+  end
+
+  # 新闻动态
+  def news_trends
+    # 公司告示
+    @category_2_name = Journalism.question_category_name(2)
+    @category_2_journalism = Journalism.where({:question_category_id => 2}, "title <> ''").order_ct_desc.page(params[:page]).per(1)
+    # 新闻动态
+    @journalisms_name = Journalism.question_category_name(1)
+    @journalisms_1_journalism = Journalism.where({:question_category_id => 1}, "title <> ''").order_ct_desc.page(params[:page]).per(10)
+  end
+
+  # 公告动态
+  def dynamic_announcement
+    # 公司告示
+    @category_2_name = Journalism.question_category_name(2)
+    @category_2_journalism = Journalism.where({:question_category_id => 2}, "title <> ''").order_ct_desc.page(params[:page]).per(1)
+    # 公告动态
+    @journalisms_name = Journalism.question_category_name(2)
+    @journalisms_2_journalism = Journalism.where({:question_category_id => 2}, "title <> ''").order_ct_desc.page(params[:page]).per(10)
   end
 
   # 最新动态（新闻）
@@ -55,7 +75,7 @@ class OursController < ApplicationController
         :job => params[:member][:job]
     )
     if @member.save
-      flash[:error_msg]="申请成功，审核后，我们将电话通知您面试"
+      flash[:error_msg]="您已申请成功，请您耐心等待。审核后，我们将致电通知您面试时间！"
       redirect_to joinus_ours_path and return
     else
       flash[:error_msg]="申请失败，请核实信息是否有误"

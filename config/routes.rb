@@ -9,6 +9,8 @@ Pxwh::Application.routes.draw do
       get 'elite_team'
       get 'journalism'
       get 'daozha'
+      get 'news_trends'
+      get 'dynamic_announcement'
     end
     member do
       get 'journalism_show'
