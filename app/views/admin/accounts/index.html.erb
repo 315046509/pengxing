@@ -66,45 +66,91 @@
   <!--/span-->
 </div><!--/row-->
 <!--截至-->
+
+<script>
+    $(function () {
+        $("#checkall").click(function () {
+            $(":checkbox[name='member_ids[]']").prop("checked", $("#checkall").prop("checked"));
+        });
+        $("#checkfan").click(function () {
+            $(":checkbox[name='member_ids[]']").each(function () {
+                $(this).prop("checked", !$(this).prop("checked"))
+            });
+        });
+    });
+</script>
+
 <div class="row-fluid sortable">
   <div class="box span12">
     <div class="box-header well" data-original-title>
       <h2><i class="icon-list-alt"></i> 应聘者列表</h2>
     </div>
     <div class="box-content">
-      <table class="table table-striped table-bordered bootstrap-datatable datatable">
-        <thead>
-        <tr>
-          <th>ID</th>
-          <th>姓名</th>
-          <th>手机号码</th>
-          <th>工作经验</th>
-          <th>应聘职位</th>
-          <th>申请时间</th>
-          <th>浏览简历</th>
-          <th>删除</th>
-        </tr>
-        </thead>
-        <tbody>
-        <% @accounts.each do |account| %>
+      <%= form_tag update_multiple_admin_accounts_path do %>
+          <table class="table table-striped table-bordered bootstrap-datatable datatable">
+            <thead>
             <tr>
-              <td><%= account.id %></td>
-              <td><%= account.name %></td>
-              <td><%= account.tel %></td>
-              <td><%= account.experience %></td>
-              <td><%= account.job %></td>
-              <td class="center"><%= my_datetime_format account.created_at %></td>
-              <td><%= link_to '浏览简历', admin_account_path(account) %></td>
-              <td><%= link_to '删除', admin_account_path(account), :method => :delete, :confirm => "删除后无法恢复，您确定要删除吗?" %></td>
+              <th>
+                <input type="checkbox" id="checkall"/>
+              </th>
+              <th>ID</th>
+              <th>姓名</th>
+              <th>手机号码</th>
+              <th>工作经验</th>
+              <th>应聘职位</th>
+              <th>申请时间</th>
+              <th>浏览简历</th>
+              <th>审阅</th>
+              <th>删除</th>
             </tr>
-        <% end %>
-        </tbody>
-      </table>
-      <div class="pagination pagination-centered">
-        <ul>
-          <%= paginate @accounts %>
-        </ul>
-      </div>
+            </thead>
+            <tbody>
+            <% @accounts.each do |account| %>
+                <tr>
+                  <td><%= check_box_tag "member_ids[]", account.id %></td>
+                  <td><%= account.id %></td>
+                  <td><%= account.name %></td>
+                  <td><%= account.tel %></td>
+                  <td><%= account.experience %></td>
+                  <td><%= account.job %></td>
+                  <td class="center"><%= my_datetime_format account.created_at %></td>
+                  <td><%= link_to '浏览简历', admin_account_path(account) %></td>
+                  <% if account.effective == 0 then
+                       n = "未浏览"
+                     elsif account.effective == 1
+                       n = "面试考核中..."
+                     elsif account.effective == 2
+                       n = "保留人才"
+                     end %>
+                  <td>
+                    <% if n == "未浏览" %>
+                        <span class="label label-success">未浏览</span>
+                    <% elsif n == "面试考核中..." %>
+                        <span class="label label-info">面试考核中...</span>
+                    <% elsif n == "保留人才" %>
+                        <span class="label label-warning">保留人才</span>
+                    <% end %>
+                  </td>
+                  <td><%= link_to '删除', admin_account_path(account), :method => :delete, :confirm => "删除后无法恢复，您确定要删除吗?" %></td>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+          <div class="form-actions">
+            <div style="float: right">
+              <%= submit_tag "删除选中项", :data => {:confirm => '删除后无法恢复，您确定要删除吗?'}, :class => "btn btn-primary" %>
+              <%= submit_tag "面试审核", :name => "through_button_zhong", :class => "btn btn-primary" %>
+              <%= submit_tag "面试通过", :name => "through_button", :class => "btn btn-primary" %>
+              <%= submit_tag "取消状态", :name => "not_through_button", :class => "btn btn-primary" %>
+            </div>
+          </div>
+          <div class="pagination pagination-centered">
+            <ul>
+              <%= paginate @accounts %>
+            </ul>
+          </div>
+
+      <% end %>
     </div>
   </div>
   <!--/span-->

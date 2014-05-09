@@ -41,7 +41,11 @@ Pxwh::Application.routes.draw do
     # 招聘管理
     resources :job
     # 求职简历
-    resources :accounts
+    resources :accounts do
+      collection do
+        post 'update_multiple'
+      end
+    end
     # 首页
     resources :home
     # 经典案例
