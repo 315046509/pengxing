@@ -27,46 +27,13 @@
       <p>
         <img src="../images/case/case_title.jpg" alt="经典案例"/>
       </p>
-      <%= render "common/sscase" %>
-      <ul id="case" class="clearfix">
-        <!--品牌网站:开始-->
-        <% @cases.each do |c| %>
-            <li>
-              <a href="<%= case_path(c) %>">
-                <div class="box">
-                  <div class="imgthumb">
-                    <div class="thumb_shadow_right">
-                      <p>
-                        <%= image_tag c.avatar.url(:anli) %>
-                      </p>
+      <img src="images/002.jpg" width="657" height="300" border="0" usemap="#Map" />
+      <map name="Map" id="Map">
+        <area shape="poly" coords="7,7,8,293,143,292,265,7" href="http://www.ccpxcm.com/cases/longjia" alt="" />
+        <area shape="poly" coords="270,5,147,293,381,292,507,7" href="http://www.ccpxcm.com/cases/weixin" />
+        <area shape="poly" coords="387,293,514,6,650,5,650,292" href="http://www.ccpxcm.com/cases/dangche" />
+      </map>
 
-                      <div class="clear">
-                      </div>
-                      <h5 class="font_12 coffee clearfix">
-                        <%= c.title %>
-                      </h5>
-
-                      <p class="date">
-                        <%= my_datetime c.created_at %>
-                      </p>
-
-                      <p class="intro">
-                        <%= truncate_u(c.description, 40) %>
-                      </p>
-
-                      <p class="view">
-                        <img src="../images/case/view.gif"/>
-                      </p>
-
-                      <div class="clear"></div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </li>
-        <% end %>
-        <!--品牌网站:结束-->
-      </ul>
       <div class="pagination pagination-centered">
         <ul><%= paginate @cases %></ul>
       </div>
