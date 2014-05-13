@@ -6,6 +6,11 @@ Pxwh::Application.routes.draw do
     collection do
       post 'user_create'
       get 'joinus'
+      get 'joinus_a'
+      get 'joinus_b'
+      get 'joinus_c'
+      get 'joinus_d'
+      get 'joinus_e'
       get 'elite_team'
       get 'journalism'
       get 'daozha'

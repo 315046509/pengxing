@@ -16,6 +16,61 @@ class OursController < ApplicationController
 
   end
 
+  # 加入我们（高管）
+  def joinus_a
+    # 招聘高管
+    @category_1_job = Job.question_category_name(1)
+    @category_1_job = Job.where({:question_category_id => 1}, "title <> ''").order_ct_desc.page(params[:page]).per(1)
+    # 公司告示
+    @category_2_name = Journalism.question_category_name(2)
+    @category_2_journalism = Journalism.where({:question_category_id => 2}, "title <> ''").order_ct_desc.page(params[:page]).per(1)
+
+  end
+
+  # 加入我们（网络）
+  def joinus_b
+    # 招聘网络
+    @category_2_job = Job.question_category_name(2)
+    @category_2_job = Job.where({:question_category_id => 2}, "title <> ''").order_ct_desc.page(params[:page]).per(1)
+    # 公司告示
+    @category_2_name = Journalism.question_category_name(2)
+    @category_2_journalism = Journalism.where({:question_category_id => 2}, "title <> ''").order_ct_desc.page(params[:page]).per(1)
+
+  end
+
+  # 加入我们（销售）
+  def joinus_c
+    # 招聘销售
+    @category_3_job = Job.question_category_name(3)
+    @category_3_job = Job.where({:question_category_id => 3}, "title <> ''").order_ct_desc.page(params[:page]).per(1)
+    # 公司告示
+    @category_2_name = Journalism.question_category_name(2)
+    @category_2_journalism = Journalism.where({:question_category_id => 2}, "title <> ''").order_ct_desc.page(params[:page]).per(1)
+
+  end
+
+  # 加入我们（行政）
+  def joinus_d
+    # 招聘行政
+    @category_4_job = Job.question_category_name(4)
+    @category_4_job = Job.where({:question_category_id => 4}, "title <> ''").order_ct_desc.page(params[:page]).per(1)
+    # 公司告示
+    @category_2_name = Journalism.question_category_name(2)
+    @category_2_journalism = Journalism.where({:question_category_id => 2}, "title <> ''").order_ct_desc.page(params[:page]).per(1)
+
+  end
+
+  # 加入我们（工程）
+  def joinus_e
+    # 招聘工程
+    @category_5_job = Job.question_category_name(5)
+    @category_5_job = Job.where({:question_category_id => 5}, "title <> ''").order_ct_desc.page(params[:page]).per(1)
+    # 公司告示
+    @category_2_name = Journalism.question_category_name(2)
+    @category_2_journalism = Journalism.where({:question_category_id => 2}, "title <> ''").order_ct_desc.page(params[:page]).per(1)
+
+  end
+
   # 精英团队
   def elite_team
     # 公司告示

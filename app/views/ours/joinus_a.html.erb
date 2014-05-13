@@ -24,7 +24,7 @@
 
       <%= render "common/jobdh" %>
       <!--加入我们:开始-->
-      <% @jobs.each do |q| %>
+      <% @category_1_job.each do |q| %>
           <tr>
             <p class="jobtitle clearfix">
               <span class="yahei font_20 jobname"><%= q.title %></span>
@@ -40,7 +40,7 @@
       <div class="newspage">
         <!--page:start-->
         <div class="pagination pagination-centered">
-          <ul><%= paginate @jobs %></ul>
+          <ul><%= paginate @category_1_job %></ul>
         </div>
         <!--page:end-->
       </div>

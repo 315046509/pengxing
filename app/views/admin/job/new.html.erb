@@ -27,6 +27,8 @@
           <legend>添加招聘信息</legend>
           <%= f.label "招聘职位：" %>
           <%= f.text_field :title %>
+          <%= f.label "职位分类：" %>
+          <%= f.select :question_category_id, options_for_select(Job::QUESTION_CATEGORYS) %>
           <%= f.label "任职资格：" %>
           <%= f.cktext_area :description %>
           <div class="form-actions">

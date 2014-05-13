@@ -12,7 +12,8 @@ class Admin::JobController < Admin::MainController
   def create
     @job = Job.new(
         :title => params[:job][:title],
-        :description => params[:job][:description]
+        :description => params[:job][:description],
+        :question_category_id => params[:job][:question_category_id]
     )
     if @job.save
       flash[:note] = "创建成功"
@@ -31,7 +32,8 @@ class Admin::JobController < Admin::MainController
     @job = Job.find(params[:id])
     update_category = @job.update_attributes(
         :title => params[:job][:title],
-        :description => params[:job][:description]
+        :description => params[:job][:description],
+        :question_category_id => params[:job][:question_category_id]
     )
     if update_category
       respond_to do |job|

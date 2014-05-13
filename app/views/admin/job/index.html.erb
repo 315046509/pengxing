@@ -30,6 +30,7 @@
         <tr>
           <th>ID</th>
           <th>招聘职位</th>
+          <th>招聘类型</th>
           <th>创建时间</th>
           <th>详细</th>
           <th>修改</th>
@@ -41,6 +42,7 @@
             <tr>
               <td><%= q.id %></td>
               <td><%= q.title %></td>
+              <td><%= q.question_category_name %></td>
               <td class="center"><%= my_datetime_format q.created_at %></td>
               <td class="center"><%= link_to "详细", admin_job_path(q) %></td>
               <td><%= link_to '修改', edit_admin_job_path(q) %></td>
