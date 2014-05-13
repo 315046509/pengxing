@@ -10,7 +10,7 @@ class Case < ActiveRecord::Base
 
   scope :order_ct_desc, lambda { order("created_at DESC") }
 
-  QUESTION_CATEGORYS = [["未分类", 0], ["档车杆", 1], ["LED", 2], ["微信", 3]]
+  QUESTION_CATEGORYS = [["未分类", 0], ["档车杆", 1], ["机场LED", 2], ["微官网", 3]]
 
   def Case.question_category_name(category_id)
     QUESTION_CATEGORYS.each do |item|
