@@ -9,7 +9,7 @@ class OursController < ApplicationController
   # 加入我们（招聘）
   def joinus
     # 招聘信息
-    @jobs = Job.order_ct_desc.page(params[:page]).per(3)
+    @jobs = Job.order_ct_desc.page(params[:page]).per(1)
     # 公司告示
     @category_2_name = Journalism.question_category_name(2)
     @category_2_journalism = Journalism.where({:question_category_id => 2}, "title <> ''").order_ct_desc.page(params[:page]).per(1)
