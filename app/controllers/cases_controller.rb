@@ -25,7 +25,7 @@ class CasesController < ApplicationController
 
     # 档车杆分类
     @category_2_name = Case.question_category_name(1)
-    @category_2_journalism = Case.where({:question_category_id => 1}, "title <> ''").order_ct_desc.page(params[:page]).per(12)
+    @category_2_case = Case.where({:question_category_id => 1}, "title <> ''").order_ct_desc.page(params[:page]).per(12)
 
   end
 
@@ -37,7 +37,7 @@ class CasesController < ApplicationController
 
     # 龙嘉机场分类
     @category_2_name = Case.question_category_name(2)
-    @category_2_journalism = Case.where({:question_category_id => 2}, "title <> ''").order_ct_desc.page(params[:page]).per(12)
+    @category_2_case = Case.where({:question_category_id => 2}, "title <> ''").order_ct_desc.page(params[:page]).per(12)
 
   end
 
@@ -49,7 +49,7 @@ class CasesController < ApplicationController
 
     # 微信
     @category_2_name = Case.question_category_name(3)
-    @category_2_journalism = Case.where({:question_category_id => 3}, "title <> ''").order_ct_desc.page(params[:page]).per(12)
+    @category_2_case = Case.where({:question_category_id => 3}, "title <> ''").order_ct_desc.page(params[:page]).per(12)
 
   end
 end
