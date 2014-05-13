@@ -8,46 +8,31 @@
 
 <div id="layout_main" class="clearfix">
   <%= render "common/menuour" %>
+  <br/>
   <div id="layout_mainer">
-    <div id="layout_content514">
-      <p class="b">
-        应聘者可在线申请或将简历发送至邮箱：admin@ccpxcm.com
-      </p>
+    <p class="b">
+      应聘者可在线申请或将简历发送至邮箱：admin@ccpxcm.com
+    </p>
 
-      <p class="b">
-        我公司将仔细审核信息，确认条件符合后，会电话通知您的面试时间
-      </p>
+    <p class="b">
+      我公司将仔细审核信息，确认条件符合后，会电话通知您的面试时间
+    </p>
 
-      <p class="b">
-        招聘负责人：张经理　联系电话：18686839325　邮箱：admin@ccpxcm.com　
-      </p>
-
-      <%= render "common/jobdh" %>
-      <!--加入我们:开始-->
-      <% @jobs.each do |q| %>
-          <tr>
-            <p class="jobtitle clearfix">
-              <span class="yahei font_20 jobname"><%= q.title %></span>
-              <span class="btn160x34 right"><a class="videoDownload boxy" href="javascript:">应聘该职位</a></span>
-            </p>
-            <p class="solid_line"></p>
-
-            <p class="font_14 yahei"> 任职资格：</p>
-            <li><%= q.description.html_safe %></li>
-            <p class="solid_line"></p>
-          </tr>
-      <% end %>
-      <div class="newspage">
-        <!--page:start-->
-        <div class="pagination pagination-centered">
-          <ul><%= paginate @jobs %></ul>
-        </div>
-        <!--page:end-->
-      </div>
-      <!--加入我们:结束-->
-      <p id="nextcolumn">
-        <span class="btn160x34 font_14 b"><a href="http://www.ccpxcm.com/ours">&gt;&gt;关于我们</a></span></p>
-    </div>
+    <p class="b">
+      招聘负责人：张经理　联系电话：18686839325　邮箱：admin@ccpxcm.com　
+    </p>
+    <br/>
+    <img src="../images/003.jpg" width="657" height="300" border="0" usemap="#Map"/>
+    <map name="Map" id="Map">
+      <area shape="poly" coords="562,-9,479,9,457,87,512,151,594,132,617,51" href="http://www.ccpxcm.com/ours/joinus_e"/>
+      <area shape="poly" coords="441,99,358,117,337,197,391,259,473,240,496,159" href="http://www.ccpxcm.com/ours/joinus_c"/>
+      <area shape="poly" coords="50,24,130,6,188,65,164,145,83,165,26,106" href="http://www.ccpxcm.com/ours/joinus_d"/>
+      <area shape="poly" coords="86,185,168,165,225,225,204,298,96,299,64,264" href="http://www.ccpxcm.com/ours/joinus_b"/>
+      <area shape="poly" coords="289,55,206,73,183,153,239,215,321,196,344,115" href="http://www.ccpxcm.com/ours/joinus_a"/>
+    </map>
+    <!--加入我们:结束-->
+    <p id="nextcolumn">
+      <span class="btn160x34 font_14 b"><a href="http://www.ccpxcm.com/ours">&gt;&gt;关于我们</a></span></p>
   </div>
 </div>
 <%= render "common/footer" %>
