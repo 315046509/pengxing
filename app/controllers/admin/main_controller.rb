@@ -9,8 +9,7 @@ class Admin::MainController < Admin::AdminController
   def check_login
     login_name = params[:login_name]
     password = params[:password]
-    verifycode = params[:verifycode]
-    if (login_name == "admin" && password == "admin" && verifycode == "19753")
+    if (login_name == "admin" && password == "admin" )
       #登录成功
       do_admin_login("")
       redirect_to admin_home_index_path and return
