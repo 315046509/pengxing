@@ -61,6 +61,15 @@ Pxwh::Application.routes.draw do
     resources :customers
     # 最新动态
     resources :journalisms
+    # 资源仓库
+    resources :resources  do
+      get 'download'
+      collection do
+        get 'upload'
+        post 'upfile'
+        put 'updatefile'
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
