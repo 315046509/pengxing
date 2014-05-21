@@ -40,7 +40,7 @@
 
               <div class="valiImgControlBox">
                 <%= f.file_field :down, :class => "input-file uniform_on" %>
-                <p class="help-block">提供下载文件，必须小于100M的文件</p>
+                <p class="help-block">提供下载文件，小于1M的文件，格式必须是xls</p>
               </div>
             </div>
             <div class="form-actions">
@@ -65,7 +65,8 @@
                             maxlength: 200
                         },
                         "resource[down]": {
-                            required: true
+                            required: true,
+                            accept: 'xls'
                         }
                     },
                     messages: {
@@ -78,7 +79,8 @@
                             maxlength: "最大长度为200"
                         },
                         "resource[down]": {
-                            required: "请选择文件！"
+                            required: "请选择文件！",
+                            accept: "只允许上传xls格式"
                         }
                     },
                     errorClass: "error",
