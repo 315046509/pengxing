@@ -25,7 +25,6 @@
               <div class="valiTitlrControlBox">
                 <%= f.text_field :title, :class => "valiTitle" %>
                 <p class="help-block">字数有效范围1~20</p>
-                <%= f.hidden_field :resource_collection_id, :value => @resource_collection_id %>
               </div>
             </div>
             <div class="control-group">
@@ -41,11 +40,11 @@
 
               <div class="valiImgControlBox">
                 <%= f.file_field :down, :class => "input-file uniform_on" %>
-                <p class="help-block">提供下载文件，文件格式必须是xls</p>
+                <p class="help-block">提供下载文件，小于1M的文件，格式必须是xls</p>
               </div>
             </div>
             <div class="form-actions">
-              <%= f.submit "提交", :class => "btn btn-primary" %>
+              <input type="submit" value="上传文件" onclick="this.value='上传中，请稍候...'" class="btn btn-primary"/>
             </div>
           </fieldset>
       <% end %>
