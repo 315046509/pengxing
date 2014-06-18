@@ -1,0 +1,51 @@
+<script>
+    <% if !flash[:error_msg].nil? && !flash[:error_msg].blank?%>
+    alert('<%=flash[:error_msg]%>');
+    <% end%>
+</script>
+<div>
+  <ul class="breadcrumb">
+    <li>
+      <a href="<%= admin_home_index_path %>">Home</a> <span class="divider">/</span>
+    </li>
+    <li>
+      <a href="<%= admin_daozhas_path %>">道闸点位</a> <span class="divider">/</span>
+    </li>
+    <li>
+      道闸点位
+    </li>
+  </ul>
+</div>
+<div class="row-fluid sortable">
+  <div class="box span12">
+    <div class="box-header well" data-original-title>
+      <h2><i class="icon-list-alt"></i>道闸点位</h2>
+    </div>
+    <div class="box-content">
+      <div id="content" class="span10" style="padding: 20px">
+        <span>小区名称：</span>
+        <%= @roll.name %>
+        <br/>
+        <span>道闸区域：</span>
+        <%= @roll.question_category_name %>
+        <br/>
+        <span>小区地址：</span>
+        <%= @roll.address %>
+        <br/>
+        <span>道闸数量：</span>
+        <%= @roll.number %>
+        <br/>
+        <span>出入情况：</span>
+        <%= @roll.access_conditions %>
+        <br/>
+        <span>媒体形式：</span>
+        <%= @roll.media_form %>
+        <br/>
+        <span>选择道闸图片：</span>
+        <%= image_tag @roll.avatar.url(:original) %>
+        <br/>
+        <!--/span-->
+      </div>
+    </div>
+  </div>
+</div><!--/row-->

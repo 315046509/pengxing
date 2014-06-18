@@ -47,6 +47,8 @@ Pxwh::Application.routes.draw do
         post 'check_login'
       end
     end
+    # 道闸点位
+    resources :daozhas
     # 招聘管理
     resources :job
     # 求职简历
