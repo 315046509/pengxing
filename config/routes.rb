@@ -21,6 +21,8 @@ Pxwh::Application.routes.draw do
       get 'journalism_show'
     end
   end
+  # 道闸
+  resources :daozhas
   # 互动服务
   resources :services
   # 经典案例
@@ -62,7 +64,7 @@ Pxwh::Application.routes.draw do
     # 最新动态
     resources :journalisms
     # 资源仓库
-    resources :resources  do
+    resources :resources do
       get 'download'
       collection do
         get 'upload'
