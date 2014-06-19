@@ -6,7 +6,7 @@
       <a title="长春朋兴道闸点位" class="sell">
         <span>道闸点位</span>
       </a>
-      <h1>区域：全部</h1>
+      <h1>区域：长春周边</h1>
     </div>
   </div>
   <div class="main">
@@ -15,7 +15,7 @@
       <table class="tbimg" cellpadding="0" cellspacing="0">
         <tbody>
         <!--      道闸列表      -->
-        <% @roll.each do |roll| %>
+        <% @category_11_daozha.each do |roll| %>
             <tr yzf_sq="5305" yzf_xzq="320" yzf_room="0" yzf_jg="450">
               <td class="img">
                 <div class="img_list">
@@ -49,7 +49,7 @@
       </table>
 
       <div class="pagination pagination-centered">
-        <ul><%= paginate @roll %></ul>
+        <ul><%= paginate @category_11_daozha %></ul>
       </div>
 
     </div>

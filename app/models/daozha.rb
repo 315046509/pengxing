@@ -2,7 +2,7 @@ class Daozha < ActiveRecord::Base
   validates :name, :presence => {:message => "请填写小区名称"}
 
   attr_accessor :avatar
-  has_attached_file :avatar, :styles => {:index => "100x75#", :thumb => "68x48#"}, :url => "/daozha/:id_partition/:style/:filename"
+  has_attached_file :avatar, :styles => {:index => "100x75#", :thumb => "68x48#",:show => "240x240#", :tuijian => "150x110#"}, :url => "/daozha/:id_partition/:style/:filename"
   validates_attachment_size :avatar, :less_than => 2.megabytes
   validates_attachment_content_type :avatar, :content_type => ['image/png', 'image/x-png', 'image/jpeg', 'image/pjpeg', 'image/jpg']
 

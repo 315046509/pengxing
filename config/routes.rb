@@ -22,7 +22,21 @@ Pxwh::Application.routes.draw do
     end
   end
   # 道闸
-  resources :daozhas
+  resources :daozhas do
+    collection do
+      get 'chaoyang'
+      get 'nanguan'
+      get 'luyuan'
+      get 'kuancheng'
+      get 'erdao'
+      get 'shuangyang'
+      get 'jingkai'
+      get 'gaoxin'
+      get 'qichecheng'
+      get 'jingyue'
+      get 'changchunzhoubian'
+    end
+  end
   # 互动服务
   resources :services
   # 经典案例

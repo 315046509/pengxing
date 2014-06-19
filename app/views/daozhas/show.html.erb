@@ -1,0 +1,160 @@
+<%= render "common/navigation" %>
+<link type="text/css" rel="stylesheet" href="../stylesheets/base.css" media="all">
+<link rel="stylesheet" type="text/css" href="../stylesheets/detail-fang.css" media="all">
+<div id="main">
+  <i class="main_topb"></i>
+
+  <div class="col detailPrimary mb15">
+    <div class="col_sub mainTitle">
+      <div class="bigtitle">
+        <h1><%= @roll.name %> </h1>
+      </div>
+      <div class="mtit_con c_999 f12 clearfix">
+        <ul class="mtit_con_left fl">
+          <li class="time">
+            <%= my_datetime @roll.created_at %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col_sub maintop mb30 clearfix">
+      <div class="col_sub gallery">
+        <div class="g_img">
+          <span><%= image_tag @roll.avatar.url(:show) %></span>
+        </div>
+      </div>
+
+      <div class="col_sub sumary">
+        <ul class="suUl">
+          <li>
+            <div class="su_tit">小区名称</div>
+            <div class="su_con">
+              <%= @roll.name %>
+            </div>
+          </li>
+          <li>
+            <div class="su_tit">道闸区域</div>
+            <div class="su_con">
+              <%= @roll.question_category_name %>
+            </div>
+          </li>
+
+          <li>
+            <div class="su_tit">小区地址</div>
+            <div class="su_con"><%= @roll.address %></div>
+          </li>
+
+          <li>
+            <div class="su_tit">道闸数量</div>
+            <div class="su_con w382">
+              <b class="pri"><%= @roll.number %></b>
+            </div>
+          </li>
+          <li>
+            <div class="su_tit">出入情况</div>
+            <div class="su_con w382"><%= @roll.access_conditions %></div>
+          </li>
+
+
+          <li>
+            <div class="su_tit">媒体形式</div>
+            <div class="su_con">
+              <%= @roll.media_form %>
+            </div>
+          </li>
+          <li>
+            <div class="safe-advice">
+              <i class="safe-icon"></i><span class="advies_span">郑重提示：朋兴私有资源。</span></div>
+          </li>
+
+          <li>
+            <div class="su_con">
+              <a class="detailCheck detail_comment" id="show_pingjia" style="" href="#pingjiablock">我要点评</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col_sub description">
+      <div class="des_tit" id="float" style="width: 730px; background-color: rgb(255, 255, 255); position: static;">
+        <ul class="desMenu clearfix">
+          <a href="javascript:;" jumpto="fyms" rel="nofollow" class="cur"><span>长春朋兴文化传媒</span></a>
+        </ul>
+        <a href="" class="exchangeHelp"></a>
+      </div>
+
+      <div class="des_con" id="fyms">
+
+        <div class="bestbroker" style="">
+          <p>朋兴传媒向您承诺：专业的广告媒体、丰富的品牌经验、卓越的创意思维，为您创造出一流的品牌价值形象！<a href="http://www.ccpxcm.com/contacts">联系我们»</a>
+          </p>
+        </div>
+        <div class="col detailRecommend mb15 nearby">
+          <h2 id="fjfytj" class="des_h2 des_h2a">最新更新</h2>
+
+          <div class="rec_con">
+            <ul class="picList clearfix">
+              <% @rolls.each do |roll| %>
+                  <li>
+                    <p class="img">
+                      <a href="<%= daozha_path(roll) %>" target="_blank">
+                        <%= image_tag roll.avatar.url(:tuijian) %>
+                      </a>
+                    </p>
+
+                    <p class="des">
+                      <a href="<%= daozha_path(roll) %>" target="_blank">
+                        <%= roll.name %>
+                      </a><br/><%= roll.address %>
+                    </p>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 客服 -->
+<div class="serviceleft">
+  <div class="si_serviceleft">
+    <div class="si_serviceleft2" style="display: block;">
+      <ul>
+        <li class="si_serviceleftLI1" style="">
+          <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=208263915&site=qq&menu=yes">
+            朋兴客服
+          </a>
+        </li>
+        <li class="si_serviceleftLI1" style="">
+          <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2544481839&site=qq&menu=yes">
+            朋兴客服
+          </a>
+        </li>
+        <li class="si_serviceleftLI2" style="">
+          <div style="display: none;"><img src="/images/weixin/wx2wm.png" alt="朋兴传媒微信"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+    $(function () {
+        $(".si_serviceleftLast").hover(function () {
+            $(".si_serviceleftLast div").fadeIn(0);
+        }, function () {
+            $(".si_serviceleftLast div").fadeOut(0);
+        })
+        $(".si_serviceleftLI2").hover(function () {
+            $(".si_serviceleftLI2 div").fadeIn(0);
+        }, function () {
+            $(".si_serviceleftLI2 div").fadeOut(0);
+        })
+        $(".si_serviceleft2 ul li").hover(function () {
+            $(this).css('background-color', '#d93d69');
+        }, function () {
+            $(this).css('background-color', '');
+        })
+    })
+</script>
+<%= render "common/footer" %>

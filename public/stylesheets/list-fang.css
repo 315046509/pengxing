@@ -1067,9 +1067,9 @@ a.par:hover {
     display: inline;
 }
 
-.list-tabs a.sel {
-    border-color: #dc5200;
-    background: #ee7510;
+.list-tabs a.sell {
+    border-color: #ffffff;
+    background: #FF0000;
     border-bottom: none;
 }
 
