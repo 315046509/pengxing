@@ -66,12 +66,6 @@
             <div class="safe-advice">
               <i class="safe-icon"></i><span class="advies_span">郑重提示：朋兴私有资源。</span></div>
           </li>
-
-          <li>
-            <div class="su_con">
-              <a class="detailCheck detail_comment" id="show_pingjia" style="" href="#pingjiablock">我要点评</a>
-            </div>
-          </li>
         </ul>
       </div>
     </div>
@@ -114,47 +108,50 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- 客服 -->
-<div class="serviceleft">
-  <div class="si_serviceleft">
-    <div class="si_serviceleft2" style="display: block;">
-      <ul>
-        <li class="si_serviceleftLI1" style="">
-          <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=208263915&site=qq&menu=yes">
-            朋兴客服
-          </a>
-        </li>
-        <li class="si_serviceleftLI1" style="">
-          <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2544481839&site=qq&menu=yes">
-            朋兴客服
-          </a>
-        </li>
-        <li class="si_serviceleftLI2" style="">
-          <div style="display: none;"><img src="/images/weixin/wx2wm.png" alt="朋兴传媒微信"></div>
-        </li>
-      </ul>
+    <!-- 留言系统 -->
+
+      <!-- 留言end -->
     </div>
   </div>
-</div>
-<script>
-    $(function () {
-        $(".si_serviceleftLast").hover(function () {
-            $(".si_serviceleftLast div").fadeIn(0);
-        }, function () {
-            $(".si_serviceleftLast div").fadeOut(0);
-        })
-        $(".si_serviceleftLI2").hover(function () {
-            $(".si_serviceleftLI2 div").fadeIn(0);
-        }, function () {
-            $(".si_serviceleftLI2 div").fadeOut(0);
-        })
-        $(".si_serviceleft2 ul li").hover(function () {
-            $(this).css('background-color', '#d93d69');
-        }, function () {
-            $(this).css('background-color', '');
-        })
-    })
-</script>
+  <!-- 客服 -->
+  <div class="serviceleft">
+    <div class="si_serviceleft">
+      <div class="si_serviceleft2" style="display: block;">
+        <ul>
+          <li class="si_serviceleftLI1" style="">
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=208263915&site=qq&menu=yes">
+              朋兴客服
+            </a>
+          </li>
+          <li class="si_serviceleftLI1" style="">
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2544481839&site=qq&menu=yes">
+              朋兴客服
+            </a>
+          </li>
+          <li class="si_serviceleftLI2" style="">
+            <div style="display: none;"><img src="/images/weixin/wx2wm.png" alt="朋兴传媒微信"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+      $(function () {
+          $(".si_serviceleftLast").hover(function () {
+              $(".si_serviceleftLast div").fadeIn(0);
+          }, function () {
+              $(".si_serviceleftLast div").fadeOut(0);
+          })
+          $(".si_serviceleftLI2").hover(function () {
+              $(".si_serviceleftLI2 div").fadeIn(0);
+          }, function () {
+              $(".si_serviceleftLI2 div").fadeOut(0);
+          })
+          $(".si_serviceleft2 ul li").hover(function () {
+              $(this).css('background-color', '#d93d69');
+          }, function () {
+              $(this).css('background-color', '');
+          })
+      })
+  </script>
 <%= render "common/footer" %>

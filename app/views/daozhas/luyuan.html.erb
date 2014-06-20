@@ -11,14 +11,19 @@
   </div>
   <div class="main">
     <div id="infolist" class="cleft">
-
-      <table class="tbimg" cellpadding="0" cellspacing="0">
-        <tbody>
-        <!--      道闸列表      -->
-        <% @category_3_daozha.each do |roll| %>
-            <tr yzf_sq="5305" yzf_xzq="320" yzf_room="0" yzf_jg="450">
+      <!-- 道闸 -->
+      <% @category_3_daozha.each do |roll| %>
+          <table class="tbimg" cellpadding="0" cellspacing="0">
+            <colgroup>
+              <col class="wimg">
+              <col>
+              <col class="wrentm">
+            </colgroup>
+            <tbody>
+            <tr yzf_sq="5305" yzf_xzq="320" yzf_room="0" yzf_jg="450" logr="xbtop_2_17843183_17580186155267_6_2" class=" ">
               <td class="img">
                 <div class="img_list">
+                  <span class="img_picCount"><span class="img_picCountOpacity"></span></span>
                   <a href="<%= daozha_path(roll) %>" target="_blank">
                     <%= image_tag roll.avatar.url(:index) %>
                   </a>
@@ -27,13 +32,16 @@
               <td class="t qj-rentd">
                 <h1>
                   <a href="<%= daozha_path(roll) %>" target="_blank" class="t">
-                    <%= roll.name %>
+                    [<%= roll.question_category_name %>]<%= roll.name %>
                   </a>
-                  <%= roll.question_category_name %>
                 </h1>
 
                 <p class="qj-renaddr">
-                  <%= roll.address %>
+                  <span class="f12">地址：<%= roll.address %></span>
+                </p>
+
+                <p class="qj-rendp">
+                  <span class="qj-listjjr"><label>朋兴传媒：道闸挡车杆，释放出媒体的力量。让更多人选择您！</label></span>
                 </p>
               </td>
               <td>
@@ -43,11 +51,10 @@
                 <br>
               </td>
             </tr>
-        <% end %>
-        <!--      道闸列表end      -->
-        </tbody>
-      </table>
-
+            </tbody>
+          </table>
+      <% end %>
+      <!-- 道闸end -->
       <div class="pagination pagination-centered">
         <ul><%= paginate @category_3_daozha %></ul>
       </div>
