@@ -1,18 +1,44 @@
 <%= render "common/navigation" %>
-<%= render "common/daozhadh" %>
-<section id="category">
-  <div class="tabsbar">
-    <div class="list-tabs">
-      <a title="长春朋兴道闸点位" class="sell">
-        <span>道闸点位</span>
-      </a>
-
-      <h1>区域：全部</h1>
+<link type="text/css" rel="stylesheet" href="../stylesheets/base.css" media="all">
+<link rel="stylesheet" type="text/css" href="../stylesheets/list-fang.css" media="all">
+<div id="ad_d22" style="height: 50px;">
+  <a href="http://www.ccpxcm.com/services" target="_blank">
+    <img src="../images/pxhf.jpg">
+  </a>
+  <section id="selection">
+    <div class="relative">
+      <dl class="secitem" id="filter_quyu">
+        <dt>区域：</dt>
+        <dd>
+          <a href="<%= daozhas_path %>">全部</a>
+          <a href="<%= chaoyang_daozhas_path %>">朝阳</a>
+          <a href="<%= nanguan_daozhas_path %>">南关</a>
+          <a href="<%= luyuan_daozhas_path %>">绿园</a>
+          <a href="<%= kuancheng_daozhas_path %>">宽城</a>
+          <a href="<%= erdao_daozhas_path %>">二道</a>
+          <a href="<%= shuangyang_daozhas_path %>">双阳</a>
+          <a href="<%= jingkai_daozhas_path %>">经开</a>
+          <a href="<%= gaoxin_daozhas_path %>">高新</a>
+          <a href="<%= qichecheng_daozhas_path %>">汽车城</a>
+          <a href="<%= jingyue_daozhas_path %>">净月</a>
+          <a href="<%= changchunzhoubian_daozhas_path %>">长春周边</a>
+        </dd>
+      </dl>
     </div>
-  </div>
-  <div class="main">
-    <div id="infolist" class="cleft">
-      <div id="top_google_ad_agent" style="display: block;">
+  </section>
+
+  <section id="category">
+    <div class="tabsbar">
+      <div class="list-tabs">
+        <a title="长春朋兴道闸点位" class="sell">
+          <span>道闸点位</span>
+        </a>
+
+        <h1>区域：全部</h1>
+      </div>
+    </div>
+    <div class="main">
+      <div id="infolist" class="cleft">
         <!-- 道闸 -->
         <% @roll.each do |roll| %>
             <table class="tbimg" cellpadding="0" cellspacing="0">
@@ -56,15 +82,15 @@
               </tbody>
             </table>
         <% end %>
-      </div>
-      <!-- 道闸end -->
-      <div class="pagination pagination-centered">
-        <ul><%= paginate @roll %></ul>
-      </div>
+        <!-- 道闸end -->
+        <div class="pagination pagination-centered">
+          <ul><%= paginate @roll %></ul>
+        </div>
 
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 <!-- 客服 -->
 <div class="serviceleft">
   <div class="si_serviceleft">
