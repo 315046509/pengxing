@@ -26,42 +26,49 @@
               <div class="field">
                 <span>小区名称：</span>
                 <%= f.text_field :name %>
+                <FONT color=#A52A2A size=2>例：红苹果家园</FONT>
               </div>
               <br/>
 
               <div class="field">
                 <span>道闸区域：</span>
                 <%= f.select :question_category_id, options_for_select(Daozha::QUESTION_CATEGORYS) %>
+                <FONT color=#A52A2A size=2>注：请填写区域</FONT>
               </div>
               <br/>
 
               <div class="field">
                 <span>小区地址：</span>
                 <%= f.text_field :address %>
+                <FONT color=#A52A2A size=2>例：飞跃东路与繁荣路</FONT>
               </div>
               <br/>
 
               <div class="field">
                 <span>道闸数量：</span>
                 <%= f.text_field :number %>
+                <FONT color=#A52A2A size=2>例：50</FONT>
               </div>
               <br/>
 
               <div class="field">
                 <span>出入情况：</span>
                 <%= f.text_field :access_conditions %>
+                <FONT color=#A52A2A size=2>例：入3杆，出3杆</FONT>
               </div>
               <br/>
 
               <div class="field">
                 <span>媒体形式：</span>
                 <%= f.text_field :media_form %>
+                <FONT color=#A52A2A size=2>例：挡车杆(2PVC 3灯箱)</FONT>
               </div>
               <br/>
 
               <div class="field">
-                <span>选择道闸图片：</span>
+                <span>道闸图片：</span>
                 <%= f.file_field :avatar %>
+                <FONT color=#A52A2A size=2>图片建议尺寸：240x240像素</FONT>
               </div>
               <br/>
 
