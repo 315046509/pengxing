@@ -1,96 +1,68 @@
 <%= render "common/navigation" %>
-<link type="text/css" rel="stylesheet" href="../stylesheets/base.css" media="all">
-<link rel="stylesheet" type="text/css" href="../stylesheets/list-fang.css" media="all">
-<div id="ad_d22" style="height: 50px;">
-  <a href="http://www.ccpxcm.com/services" target="_blank">
-    <img src="../images/pxhf.jpg">
-  </a>
-  <section id="selection">
-    <div class="relative">
-      <dl class="secitem" id="filter_quyu">
-        <dt>区域：</dt>
-        <dd>
-          <a href="<%= daozhas_path %>">全部</a>
-          <a href="<%= chaoyang_daozhas_path %>">朝阳</a>
-          <a href="<%= nanguan_daozhas_path %>">南关</a>
-          <a href="<%= luyuan_daozhas_path %>">绿园</a>
-          <a href="<%= kuancheng_daozhas_path %>">宽城</a>
-          <a href="<%= erdao_daozhas_path %>">二道</a>
-          <a href="<%= shuangyang_daozhas_path %>">双阳</a>
-          <a href="<%= jingkai_daozhas_path %>">经开</a>
-          <a href="<%= gaoxin_daozhas_path %>">高新</a>
-          <a href="<%= qichecheng_daozhas_path %>">汽车城</a>
-          <a href="<%= jingyue_daozhas_path %>">净月</a>
-          <a href="<%= changchunzhoubian_daozhas_path %>">长春周边</a>
-        </dd>
-      </dl>
+<%= render "common/daozhadh" %>
+<section id="category">
+  <div class="tabsbar">
+    <div class="list-tabs">
+      <a title="长春朋兴道闸点位" class="sell">
+        <span>道闸点位</span>
+      </a>
+
+      <h1>区域：全部</h1>
     </div>
-  </section>
+  </div>
+  <div class="main">
+    <div id="infolist" class="cleft">
+      <!-- 道闸 -->
+      <% @roll.each do |roll| %>
+          <table class="tbimg" cellpadding="0" cellspacing="0">
+            <colgroup>
+              <col class="wimg">
+              <col>
+              <col class="wrentm">
+            </colgroup>
+            <tbody>
+            <tr yzf_sq="5305" yzf_xzq="320" yzf_room="0" yzf_jg="450" logr="xbtop_2_17843183_17580186155267_6_2" class=" ">
+              <td class="img">
+                <div class="img_list">
+                  <span class="img_picCount"><span class="img_picCountOpacity"></span></span>
+                  <a href="<%= daozha_path(roll) %>" target="_blank">
+                    <%= image_tag roll.avatar.url(:index) %>
+                  </a>
+                </div>
+              </td>
+              <td class="t qj-rentd">
+                <h1>
+                  <a href="<%= daozha_path(roll) %>" target="_blank" class="t">
+                    [<%= roll.question_category_name %>]<%= roll.name %>
+                  </a>
+                </h1>
 
-  <section id="category">
-    <div class="tabsbar">
-      <div class="list-tabs">
-        <a title="长春朋兴道闸点位" class="sell">
-          <span>道闸点位</span>
-        </a>
+                <p class="qj-renaddr">
+                  <span class="f12">地址：<%= roll.address %></span>
+                </p>
 
-        <h1>区域：全部</h1>
+                <p class="qj-rendp">
+                  <span class="qj-listjjr"><label>朋兴传媒：道闸挡车杆，释放出媒体的力量。让更多人选择您！</label></span>
+                </p>
+              </td>
+              <td>
+                <b class="pri"><%= roll.number %>个</b>道闸数量
+                <br>
+                <span class="showroom"><%= roll.media_form %></span>
+                <br>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+      <% end %>
+      <!-- 道闸end -->
+      <div class="pagination pagination-centered">
+        <ul><%= paginate @roll %></ul>
       </div>
+
     </div>
-    <div class="main">
-      <div id="infolist" class="cleft">
-        <!-- 道闸 -->
-        <% @roll.each do |roll| %>
-            <table class="tbimg" cellpadding="0" cellspacing="0">
-              <colgroup>
-                <col class="wimg">
-                <col>
-                <col class="wrentm">
-              </colgroup>
-              <tbody>
-              <tr yzf_sq="5305" yzf_xzq="320" yzf_room="0" yzf_jg="450" logr="xbtop_2_17843183_17580186155267_6_2" class=" ">
-                <td class="img">
-                  <div class="img_list">
-                    <span class="img_picCount"><span class="img_picCountOpacity"></span></span>
-                    <a href="<%= daozha_path(roll) %>" target="_blank">
-                      <%= image_tag roll.avatar.url(:index) %>
-                    </a>
-                  </div>
-                </td>
-                <td class="t qj-rentd">
-                  <h1>
-                    <a href="<%= daozha_path(roll) %>" target="_blank" class="t">
-                      [<%= roll.question_category_name %>]<%= roll.name %>
-                    </a>
-                  </h1>
-
-                  <p class="qj-renaddr">
-                    <span class="f12">地址：<%= roll.address %></span>
-                  </p>
-
-                  <p class="qj-rendp">
-                    <span class="qj-listjjr"><label>朋兴传媒：道闸挡车杆，释放出媒体的力量。让更多人选择您！</label></span>
-                  </p>
-                </td>
-                <td>
-                  <b class="pri"><%= roll.number %>个</b>道闸数量
-                  <br>
-                  <span class="showroom"><%= roll.media_form %></span>
-                  <br>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-        <% end %>
-        <!-- 道闸end -->
-        <div class="pagination pagination-centered">
-          <ul><%= paginate @roll %></ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-</div>
+  </div>
+</section>
 <!-- 客服 -->
 <div class="serviceleft">
   <div class="si_serviceleft">
